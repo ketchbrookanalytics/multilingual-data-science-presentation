@@ -1,0 +1,14 @@
+{
+  "name": "Multilingual Data Science",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+  "features": {
+    "ghcr.io/rocker-org/devcontainer-features/quarto-cli:1": {}
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "quarto.quarto-vscode"
+      ]
+    }
+  }
+}
