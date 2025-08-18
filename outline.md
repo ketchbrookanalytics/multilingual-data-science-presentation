@@ -8,8 +8,6 @@
 
 <!-- ## Strengths & Weaknesses
 
-<!-- Should we even have this slide? -->
-
 - {shiny} ecosystem in R
     + {shinyWidgets}
     + {echarts4r}
@@ -120,3 +118,24 @@ At a minimum...
     + Our team is actually international -- there are folks for whom English is their second language; the idiosynchracies that exist within each of our native languages can lead to someone saying something that may be interpreted as incorrect or even offensive -- make sure you figure out what their intention was with that statement before reacting
     + If you're on the other side of that, make sure you're using language that's as straightforward as possible, or preface what you want to say with something like "I don't know if I'm saying this right..."
     + This can be just as much the case with 2 individuals who are both native English speakers
+
+# Feedback
+- Too much -- going to run out of time
+- Option 1:
+    + Cut things and focus on a couple of topics (I can stay deep on those)
+- Option 2:
+    + Organize sub-bullets into broader themes/mantras
+- Emphasize the Communication section
+    + Sets the stage for everything else (maybe earlier in presentation?)
+- *Why* even be multilingual?  Especially if I'm saying that everything great in one language has been ported to another...
+    + Diversity increases capacity to tackle difficult tasks
+    + Can talk about how our clients may have a preference (we ask them "Do you want the solution in R or Python?")
+- Discuss the reality of what we've actually found to work for our team / what hasn't worked
+- Will get more engagement if I tell tangible stories w/ specific examples
+- Is there a mantra to go with the different sub-bullets?  I.e., for package choices, take the perspective of the reviewer
+- Start the talk by emphasizing the importance of EMPATHY
+    + Contrast it to the LinkedIn post
+    + Sure Node.js may make you the fastest app, but is it an empathic choice?  Is this creating tech debt?
+
+- Are the commands a makefile or internal functions? Is consistency the goal?
+- Nit: Don’t talk about the specific  dev  branch, but maybe a “side” branch or a PR branch
