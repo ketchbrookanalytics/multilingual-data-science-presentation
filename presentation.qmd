@@ -21,86 +21,145 @@ format:
 ::: {.notes}
 
 - This is a LinkedIn post that was making the rounds a few months ago; I'm sure maybe even a few of you saw it.
-- It got a lot of buzz online
-- My experience is a little bit different
+- It got a lot of buzz online, re-igniting the so-called "language wars" that would pop up every once in awhile in the pre-Elon Twitter days... simpler times...
+- My experience with the R vs. Python debate is a little bit different and doesn't take a side
 
 :::
 
 ## The Reality
 
+. . .
+
 > Amost everything that used to make Python awesome that wasn't in R has been since ported over to R.
+
+. . .
 
 > And everything that used to make R awesome that wasn't in Python has been since ported over to Python.
 
+::: {.notes}
+
+- Potentially hot take incoming?
+- < read slide >
+
+:::
+
 ## Why Have a Multilingual Team?
+
+<br>
+
+::: {.incremental}
 
 - Larger potential talent pool
 - More tools in the toolbox
 - Dual offering
 
+:::
+
 ::: {.notes}
 
-- If all of the good stuff is in both languages, then why not just pick one?
-- If you're looking for good data science candidates to build yoru team out, limiting your search to only candidates who know one language or the other can slow your hiring process
-- Once in awhile, I *will* run into a problem I'm trying to solve where one language has the perfect package and the other doesn't
+- So Michael, if all of the good stuff is in both languages, then why not just pick one?  I can think of at least 3 reasons why...
+- First, if you're looking for good data science candidates to build out your team, limiting your search to only candidates who know one language or the other can slow your hiring process
+- Second, once in awhile, I *will* run into a problem I'm trying to solve where one language has the perfect package and the other doesn't
 - Lastly, I work at a consulting firm, and the fact that we can offer our clients the option to *choose* the language they want us to build the solution in is huge
 
 :::
 
-## The Key to a Great Multilingual Data Science Team
+## The Key to a Great Multilingual Data Science Team?
 
-**EMPATHY**
+. . .
+
+![](www/empathy2.png){height=450}
 
 ::: {.notes}
 
-- So this is going to sound non-technical, but I've found that the key to making multilingual data science teams work is an extra does of empathy
-- I'd argue that this is important in *any* data science team, but especially so for teams using R & Python
+- So now that I've convinced you that a multilingual data science team can provide a lot of benefits, I'm going to give you the secret to making it work
+- So this is going to sound non-technical, but I've found that the key to making multilingual data science teams work is an extra dose of empathy
+- I'd argue that empathy is an important ingredient in *any* data science team, but especially so for teams using R & Python
 
 :::
 
-## How Empathy Manifests Technically
+## How Empathy Manifests *Technically*
 
-1. Environment management
-1. Package choices
-1. Documentation
+<br>
 
-## Keys
+. . .
 
-- Environment Management
-- Git-based SDLC workflow
-- Package choices
-    + How easy would it be for an R dev to review my Python code (and vice versa)?
-- Documentation
-    + Detailed READMEs
-    + Detailed code commenting + docstrings / roxygen
-- Single point of execution
-    + The software should take 1 action to "do the thing"
-    + sometimes 2 actions (if you must)
-    + Package framework
-- Repository Structure Standards
-    + I should see familiar folder names / file names in code repositories
-- Team communication
-    + EMPATHY
+🌍 Environment management
+<br>
 
-## Environment Management
+. . .
+
+📦 Package choices
+<br>
+
+. . .
+
+📝 Documentation
+
+::: {.notes}
+
+- I'm going to focus on *technical* things you can do that are empathetic towards others on your team < read slide >
+
+
+:::
+
+## Environment Management {transition="none"}
+
+> *"It works on my machine"*
+
+::: {.notes}
 
 * "It works on my machine"
     + Still lots of folks out there dealing with this day in & day out
     + Also people that don't care -- because they are essentially a lone wolf
         + I still think these people should care about this... it's a short-sighted approach
+
+:::
+
+## Environment Management {transition="none"}
+
+::: {.incremental}
+
+1. Operating System
+1. Python and/or R version
+1. Package versions
+
+:::
+
+::: {.notes}
+
 * Requires 3 things:
     + Operating System
     + Python and/or R version
     + Package versions
-* There are a few options:
-    + Third party tools (Posit Workbench)
-    + Docker
+
+:::
+
+## Environment Management {transition="none"}
+
+::: {.incremental}
+
+- Third-party tools:
+    + Posit Workbench
+
+<br>
+
+- Open Source tools:
+    + Containers (Docker / Podman)
     + Nix
+
+:::
+
+::: {.notes}
+
+* There are three best approaches to doing this < read slide >
 * Going the open source approach requires some DevOps skillsets
     + Need to ask yourself if that's something you want to undertake or not
     + Cost / benefit of 3rd party tools (not saying Posit tooling doesn't have another million incredible features -- I'm just looking at this from an environment management standpoint)
 
-## Git-Based SDLC Workflow
+:::
+
+<!-- ## Git-Based SDLC Workflow
 
 * Need to be using git -- I'm not going to spend my time today trying to convince you of that -- there's way more folks out there who can articulate that argument better than I can; but let's assume you are
 * Protected `main` branch
@@ -110,19 +169,137 @@ format:
     + Even better, you can only merge the `dev` branch into `main` if you have passed all those checks
 * New features / bugs present as "Issues" in the repository
 * Issues become PRs
-* PRs get reviewed and merged
+* PRs get reviewed and merged -->
 
 ## Package Choices
 
-* How easy would it be for someone who knows R to review my Python code (and vice versa)?
-* Trade pandas for polars
-* Use {dplyr}
-* Use DuckDB!
-    + Also, if you didn't know it, you can write SQL in polars 🤯
+![](www/michael-speech-bubble.png)
+
+::: {.notes}
+
+- Here's the question I'm always asking myself
+- The choice of packages you use is the second thing that can really drive success for an effective multilingual team
+
+:::
+
+## Package Choices
+
+<br>
+
+::: {.columns}
+::: {.column}
+
+```{.r}
+library(dplyr)
+
+df <-
+    mtcars |>
+        filter(
+            mpg > 20
+        ) |>
+        select(wt) |>
+        arrange(desc(wt)) |>
+        head(5)
+#
+```
+
+![](www/dplyr-logo.png)
+
+:::
+::: {.column}
+
+```{.python}
+import polars as pl
+
+df = (
+    mtcars
+    .filter(
+        (pl.col("mpg") > 20)
+    )
+    .select("wt")
+    .sort("wt", descending=True)
+    .head(5)
+)
+```
+
+![](www/polars-logo.png)
+
+:::
+:::
+
+::: {.notes}
+
+- This goes somewhat back to my slide where I mentioned that everything great in each language had been ported to the other language, but it somewhat goes beyond that; I think the great *ideas* are being borrowed from each language
+- The python package {polars} is a great example. The author of polars, Ritchie Vink, has mentioned in a bunch of interviews that {polars} takes a lot inspiration from the tidyverse in R
+- We know that data prep is 80% of data science, so the methodology and opinions you choose for your data prep code is important
+- Our choice is typically {polars} for Python data prep or {dplyr} for R data prep
+- {polars} is already pretty good at this, but in situations where we need to manipulate "big data" and {dplyr} isn't providing enough horsepower, you could opt for the {arrow} R package to continue to leverage a lot of {dplyr} syntax, but there's another interesting option that's perhaps even more language agnostic, courtesy of a Posit Conf keynote speaker last year...
+
+:::
+
+## Package Choices
+
+![](www/duckdb-logo.png)
+
+## Package Choices
+
+<br>
+
+::: {.columns}
+::: {.column}
+
+```{.r}
+library(duckdb)
+
+# Connect to DuckDB (in-memory db)
+conn <- dbConnect(duckdb::duckdb())
+
+# Define SQL query
+query <- "
+    SELECT wt
+    FROM mtcars
+    WHERE mpg > 20
+    ORDER BY wt DESC
+    LIMIT 5
+"
+
+# Execute query and get results
+result <- dbGetQuery(conn, query)
+```
+
+:::
+::: {.column}
+
+```{.python}
+import duckdb
+
+# Connect to DuckDB (in-memory db)
+conn = duckdb.connect()
+
+# Define SQL query
+query = """
+    SELECT wt
+    FROM mtcars
+    WHERE mpg > 20
+    ORDER BY wt DESC
+    LIMIT 5
+"""
+
+# Execute query and get results
+result = conn.execute(query).df()
+```
+
+:::
+:::
+
+::: {.notes}
+
 * Use {great-tables} (Python) or {GT} (R)
 * Use {plotnine} (Python) or {ggplot2} (R)
 * Comment comment comment
 * If you're coming from Python and working with an R team that doesn't have a lot of OOP experience (I'd argue that R is used more as a  functional programming language than it is an OOP language), you may want to avoid OOP when a functional approach is just as good
+
+:::
 
 ## Documentation
 
@@ -132,30 +309,12 @@ format:
 * Standardized approach to READMEs
 * Robust explanations within GitHub Issues and PRs (should feel like hand-holding)
     + This can be hard in a fast-paced environment with tight deadlines, but it will *save* you time in the long run (assuming you're actually taking the time to review)
+* Mermaidjs
 
-## Single Point of Execution
 
-* You should be able to clone the repository, perform one action to get the environment set up, and then run one command (MAYBE 2 commands) to "do the thing"
-    + Run the App
-    + Start the API
-    + Render the report
-    + Do the ETL and store it in the database
-    + etc.
 
-## Repository Structure Standards
 
-At a minimum...
 
-* Some top level script that "does the thing" (`app.py`, `app.R`, `main.py`, `main.R`)
-* A README that:
-    * Explains the purpose of the software
-    * Defines requirements
-    * Explains how to get up-and-running and use the software (i.e., "Clone this repository, create a `.Renviron` file with the following environment variables set, from an R terminal run `renv::restore()`, then run the `main.R` script")
-    * Explains the structure of the repository
-    * Collaboration instructions
-    * Mermaid JS is your friend!
-* A folder for your custom logic
-* Probably some sort lock file for defining package versions and maybe even R/Python version
 
 ## Communication
 
@@ -168,3 +327,10 @@ At a minimum...
     + Our team is actually international -- there are folks for whom English is their second language; the idiosynchracies that exist within each of our native languages can lead to someone saying something that may be interpreted as incorrect or even offensive -- make sure you figure out what their intention was with that statement before reacting
     + If you're on the other side of that, make sure you're using language that's as straightforward as possible, or preface what you want to say with something like "I don't know if I'm saying this right..."
     + This can be just as much the case with 2 individuals who are both native English speakers
+
+<!-- ### Feedback
+
+- Add some visual cues that make it obvious to separate 3rd party environment management tooling () and open source tooling
+- Don't need to
+- Can we pull out any stories?
+- Put a Minimum Reproducible Example in your issues!! -->
