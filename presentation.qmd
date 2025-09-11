@@ -7,7 +7,7 @@ author: |
   | Ketchbrook Analytics
 format:
   revealjs:
-    theme: sky
+    theme: custom.scss
     logo: www/ketchbrook_logo.png
     incremental: false
     transition: slide
