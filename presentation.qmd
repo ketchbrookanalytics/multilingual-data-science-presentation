@@ -193,7 +193,7 @@ format:
 
 :::
 
-## Package Choices
+## Package Choices: dplyr & polars {transition="none-out"}
 
 <br>
 
@@ -248,11 +248,175 @@ df = (
 
 :::
 
-## Package Choices
+## Package Choices: dplyr & polars {transition="none"}
+
+<br>
+
+::: {.columns}
+::: {.column}
+
+```{.r code-line-numbers="5-7"}
+library(dplyr)
+
+df <-
+    mtcars |>
+        filter(
+            mpg > 20
+        ) |>
+        select(wt) |>
+        arrange(desc(wt)) |>
+        head(5)
+#
+```
+
+:::
+::: {.column}
+
+```{.python code-line-numbers="5-7"}
+import polars as pl
+
+df = (
+    mtcars
+    .filter(
+        (pl.col("mpg") > 20)
+    )
+    .select("wt")
+    .sort("wt", descending=True)
+    .head(5)
+)
+```
+
+:::
+:::
+
+## Package Choices: dplyr & polars {transition="none"}
+
+<br>
+
+::: {.columns}
+::: {.column}
+
+```{.r code-line-numbers="8"}
+library(dplyr)
+
+df <-
+    mtcars |>
+        filter(
+            mpg > 20
+        ) |>
+        select(wt) |>
+        arrange(desc(wt)) |>
+        head(5)
+#
+```
+
+:::
+::: {.column}
+
+```{.python code-line-numbers="8"}
+import polars as pl
+
+df = (
+    mtcars
+    .filter(
+        (pl.col("mpg") > 20)
+    )
+    .select("wt")
+    .sort("wt", descending=True)
+    .head(5)
+)
+```
+
+:::
+:::
+
+## Package Choices: dplyr & polars {transition="none"}
+
+<br>
+
+::: {.columns}
+::: {.column}
+
+```{.r code-line-numbers="9"}
+library(dplyr)
+
+df <-
+    mtcars |>
+        filter(
+            mpg > 20
+        ) |>
+        select(wt) |>
+        arrange(desc(wt)) |>
+        head(5)
+#
+```
+
+:::
+::: {.column}
+
+```{.python code-line-numbers="9"}
+import polars as pl
+
+df = (
+    mtcars
+    .filter(
+        (pl.col("mpg") > 20)
+    )
+    .select("wt")
+    .sort("wt", descending=True)
+    .head(5)
+)
+```
+
+:::
+:::
+
+## Package Choices: dplyr & polars {transition="none"}
+
+<br>
+
+::: {.columns}
+::: {.column}
+
+```{.r code-line-numbers="10"}
+library(dplyr)
+
+df <-
+    mtcars |>
+        filter(
+            mpg > 20
+        ) |>
+        select(wt) |>
+        arrange(desc(wt)) |>
+        head(5)
+#
+```
+
+:::
+::: {.column}
+
+```{.python code-line-numbers="10"}
+import polars as pl
+
+df = (
+    mtcars
+    .filter(
+        (pl.col("mpg") > 20)
+    )
+    .select("wt")
+    .sort("wt", descending=True)
+    .head(5)
+)
+```
+
+:::
+:::
+
+## Package Choices: DuckDB
 
 ![](www/duckdb-logo.png)
 
-## Package Choices
+## Package Choices: DuckDB {transition="none-out"}
 
 <br>
 
@@ -306,12 +470,207 @@ result = conn.execute(query).df()
 ::: {.notes}
 
 - In each language, there's a bit of setup in the front (to connect to the database) and some small syntactic differences at the end of the script -- but everything in the middle is SQL!  The middle of your code should be almost exactly identical regardless of which language you're using -- SQL will not die
+
+:::
+
+## Package Choices: DuckDB {transition="none"}
+
+<br>
+
+::: {.columns}
+::: {.column}
+
+```{.r code-line-numbers="4,16"}
+library(duckdb)
+
+# Connect to DuckDB (in-memory db)
+conn <- dbConnect(duckdb::duckdb())
+
+# Define SQL query
+query <- "
+    SELECT wt
+    FROM mtcars
+    WHERE mpg > 20
+    ORDER BY wt DESC
+    LIMIT 5
+"
+
+# Execute query and get results
+result <- dbGetQuery(conn, query)
+```
+
+:::
+::: {.column}
+
+```{.python code-line-numbers="4,16"}
+import duckdb
+
+# Connect to DuckDB (in-memory db)
+conn = duckdb.connect()
+
+# Define SQL query
+query = """
+    SELECT wt
+    FROM mtcars
+    WHERE mpg > 20
+    ORDER BY wt DESC
+    LIMIT 5
+"""
+
+# Execute query and get results
+result = conn.execute(query).df()
+```
+
+:::
+:::
+
+## Package Choices: DuckDB {transition="none"}
+
+<br>
+
+::: {.columns}
+::: {.column}
+
+```{.r code-line-numbers="7-13"}
+library(duckdb)
+
+# Connect to DuckDB (in-memory db)
+conn <- dbConnect(duckdb::duckdb())
+
+# Define SQL query
+query <- "
+    SELECT wt
+    FROM mtcars
+    WHERE mpg > 20
+    ORDER BY wt DESC
+    LIMIT 5
+"
+
+# Execute query and get results
+result <- dbGetQuery(conn, query)
+```
+
+:::
+::: {.column}
+
+```{.python code-line-numbers="7-13"}
+import duckdb
+
+# Connect to DuckDB (in-memory db)
+conn = duckdb.connect()
+
+# Define SQL query
+query = """
+    SELECT wt
+    FROM mtcars
+    WHERE mpg > 20
+    ORDER BY wt DESC
+    LIMIT 5
+"""
+
+# Execute query and get results
+result = conn.execute(query).df()
+```
+
+:::
+:::
+
+## Package Choices: ggplot2 & plotnine
+
+<br>
+
+::: {.columns}
+::: {.column}
+
+```{.r}
+library(ggplot2)
+
+
+ggplot(
+  mtcars,
+  aes(x = wt, y = mpg)
+) +
+  geom_point(color = "red") +
+  geom_smooth(method = "lm")
+#
+```
+
+:::
+::: {.column}
+
+```{.python}
+from plotnine import
+
+(
+  ggplot(
+    mtcars,
+    aes(x = "wt", y = "mpg")
+  ) +
+    geom_point(color = "red") +
+    geom_smooth(method = "lm")
+)
+```
+
+:::
+:::
+
+::: {.notes}
+
 - Other similar package comparisons:
     + Use {great-tables} (Python) or {GT} (R)
     + Use {plotnine} (Python) or {ggplot2} (R)
 - **Comment, comment, comment** your code (talking about inline comments; we'll talk about other types of documentation shortly)
 - Lastly, if you're coming from Python and working with an R team that doesn't have a lot of OOP experience (I'd argue that R is used more as a  functional programming language than it is an OOP language), you may want to avoid OOP when a functional approach is just as good
 
+:::
+
+## Package Choices: gt & great-tables
+
+::: {.columns}
+::: {.column}
+
+```{.r}
+library(gt)
+
+int_cols <- c(
+  "cyl", "vs", "am",
+  "gear", "carb"
+)
+
+
+gt(mtcars) |>
+  tab_header(
+    title = "Awesome mtcars",
+    subtitle = "With 💙 + GT"
+  ) |>
+  fmt_number() |>
+  fmt_integer(columns = int_cols)
+#
+```
+
+:::
+::: {.column}
+
+```{.python}
+from great_tables import GT
+
+int_cols = [
+  "cyl", "vs", "am",
+  "gear", "carb"
+]
+
+(
+  GT(mtcars)
+  .tab_header(
+      title = "Awesome mtcars",
+      subtitle = "With 💙 + GT"
+  .) |>
+  .fmt_number() |>
+  .fmt_integer(columns=int_cols)
+)
+```
+
+:::
 :::
 
 <!-- ## Documentation
@@ -384,5 +743,3 @@ result = conn.execute(query).df()
 
 
 -->
-
--
