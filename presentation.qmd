@@ -1057,6 +1057,22 @@ def round_up(x, dig):
 
 :::
 
+## Documentation: Issues
+
+Anatomy of a good issue:
+
+- Overview
+- Reproducible Example
+- Potential Solution(s)
+
+## Documentation: Pull Requests
+
+Anatomy of a good pull request:
+
+- Overview
+- Details
+- How to Test
+
 ## Documentation
 
 ![](www/good-issue.mp4)
