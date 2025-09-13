@@ -689,6 +689,357 @@ int_cols = [
 
 ## Documentation
 
+![](www/dont-forget.png)
+
+## Documentation: Function Documentation Syntax {transition="none-out"}
+
+::: {.columns}
+::: {.column}
+
+```{.r}
+round_up <- function(x, dig) {
+    f <- 10 ** dig
+    out <- ceiling(x * f) / f
+    return(out)
+}
+```
+
+:::
+
+::: {.column}
+
+```{.python}
+def round_up(x, dig):
+    f = 10 ** dig
+    out = np.ceil(x * f) / f
+    return out
+```
+
+:::
+:::
+
+## Documentation: Function Documentation Syntax {transition="none"}
+
+::: {.columns}
+::: {.column}
+
+```{.r}
+#' Round a number *up* to a
+#' certain number of digits.
+#'
+#' @param x (double) The value
+#'   to be rounded.
+#' @param dig (int) The
+#'   number of digits to round
+#'   to.
+#'
+#' @return The rounded number.
+#'
+#' @examples
+#' # This returns `2.15`
+#' round_up(2.141, 2)
+round_up <- function(x, dig) {
+    f <- 10 ** dig
+    out <- ceiling(x * f) / f
+    return(out)
+}
+```
+
+:::
+
+::: {.column}
+
+```{.python}
+def round_up(x, dig):
+    """
+    Round a number *up* to a
+    certain number of digits.
+
+    Parameters
+    ----------
+    x : float
+        The value to be
+        rounded.
+    dig: int
+        The number of digits to
+        round to.
+
+    Returns
+    -------
+    float
+        The rounded number.
+
+    Examples
+    --------
+    >>> round_up(2.141, 2)
+    2.15
+    """
+    f = 10 ** dig
+    out = np.ceil(x * f) / f
+    return out
+```
+
+:::
+:::
+
+## Documentation: Function Documentation Syntax {transition="none"}
+
+::: {.columns}
+::: {.column}
+
+```{.r code-line-numbers="1-2"}
+#' Round a number *up* to a
+#' certain number of digits.
+#'
+#' @param x (double) The value
+#'   to be rounded.
+#' @param dig (int) The
+#'   number of digits to round
+#'   to.
+#'
+#' @return The rounded number.
+#'
+#' @examples
+#' # This returns `2.15`
+#' round_up(2.141, 2)
+round_up <- function(x, dig) {
+    f <- 10 ** dig
+    out <- ceiling(x * f) / f
+    return(out)
+}
+```
+
+:::
+
+::: {.column}
+
+```{.python code-line-numbers="3-4"}
+def round_up(x, dig):
+    """
+    Round a number *up* to a
+    certain number of digits.
+
+    Parameters
+    ----------
+    x : float
+        The value to be
+        rounded.
+    dig: int
+        The number of digits to
+        round to.
+
+    Returns
+    -------
+    float
+        The rounded number.
+
+    Examples
+    --------
+    >>> round_up(2.141, 2)
+    2.15
+    """
+    f = 10 ** dig
+    out = np.ceil(x * f) / f
+    return out
+```
+
+:::
+:::
+
+## Documentation: Function Documentation Syntax {transition="none"}
+
+::: {.columns}
+::: {.column}
+
+```{.r code-line-numbers="4-8"}
+#' Round a number *up* to a
+#' certain number of digits.
+#'
+#' @param x (double) The value
+#'   to be rounded.
+#' @param dig (int) The
+#'   number of digits to round
+#'   to.
+#'
+#' @return The rounded number.
+#'
+#' @examples
+#' # This returns `2.15`
+#' round_up(2.141, 2)
+round_up <- function(x, dig) {
+    f <- 10 ** dig
+    out <- ceiling(x * f) / f
+    return(out)
+}
+```
+
+:::
+
+::: {.column}
+
+```{.python code-line-numbers="6-13"}
+def round_up(x, dig):
+    """
+    Round a number *up* to a
+    certain number of digits.
+
+    Parameters
+    ----------
+    x : float
+        The value to be
+        rounded.
+    dig: int
+        The number of digits to
+        round to.
+
+    Returns
+    -------
+    float
+        The rounded number.
+
+    Examples
+    --------
+    >>> round_up(2.141, 2)
+    2.15
+    """
+    f = 10 ** dig
+    out = np.ceil(x * f) / f
+    return out
+```
+
+:::
+:::
+
+## Documentation: Function Documentation Syntax {transition="none"}
+
+::: {.columns}
+::: {.column}
+
+```{.r code-line-numbers="10"}
+#' Round a number *up* to a
+#' certain number of digits.
+#'
+#' @param x (double) The value
+#'   to be rounded.
+#' @param dig (int) The
+#'   number of digits to round
+#'   to.
+#'
+#' @return The rounded number.
+#'
+#' @examples
+#' # This returns `2.15`
+#' round_up(2.141, 2)
+round_up <- function(x, dig) {
+    f <- 10 ** dig
+    out <- ceiling(x * f) / f
+    return(out)
+}
+```
+
+:::
+
+::: {.column}
+
+```{.python code-line-numbers="15-18"}
+def round_up(x, dig):
+    """
+    Round a number *up* to a
+    certain number of digits.
+
+    Parameters
+    ----------
+    x : float
+        The value to be
+        rounded.
+    dig: int
+        The number of digits to
+        round to.
+
+    Returns
+    -------
+    float
+        The rounded number.
+
+    Examples
+    --------
+    >>> round_up(2.141, 2)
+    2.15
+    """
+    f = 10 ** dig
+    out = np.ceil(x * f) / f
+    return out
+```
+
+:::
+:::
+
+## Documentation: Function Documentation Syntax {transition="none"}
+
+::: {.columns}
+::: {.column}
+
+```{.r code-line-numbers="12-14"}
+#' Round a number *up* to a
+#' certain number of digits.
+#'
+#' @param x (double) The value
+#'   to be rounded.
+#' @param dig (int) The
+#'   number of digits to round
+#'   to.
+#'
+#' @return The rounded number.
+#'
+#' @examples
+#' # This returns `2.15`
+#' round_up(2.141, 2)
+round_up <- function(x, dig) {
+    f <- 10 ** dig
+    out <- ceiling(x * f) / f
+    return(out)
+}
+```
+
+:::
+
+::: {.column}
+
+```{.python code-line-numbers="20-23"}
+def round_up(x, dig):
+    """
+    Round a number *up* to a
+    certain number of digits.
+
+    Parameters
+    ----------
+    x : float
+        The value to be
+        rounded.
+    dig: int
+        The number of digits to
+        round to.
+
+    Returns
+    -------
+    float
+        The rounded number.
+
+    Examples
+    --------
+    >>> round_up(2.141, 2)
+    2.15
+    """
+    f = 10 ** dig
+    out = np.ceil(x * f) / f
+    return out
+```
+
+:::
+:::
+
+## Documentation
+
 <br>
 
 ![](www/git-sdlc.png)
@@ -728,7 +1079,6 @@ int_cols = [
 <!-- ### Feedback
 
 - Add some visual cues that make it obvious to separate 3rd party environment management tooling () and open source tooling
-- Don't need to
 - Can we pull out any stories?
 - Put a Minimum Reproducible Example in your issues!!
 
@@ -738,8 +1088,5 @@ int_cols = [
     + Do this for all pillars
 
 - "In a talk where we're discussing how to try and bridge the worlds of Python and R, we can't even agree on whether we should use the term 'Multilingual' or 'Polyglot'
-
-- Add examples of {ggplot2}/{plotnine} and {GT}/{great-tables}
-
 
 -->
