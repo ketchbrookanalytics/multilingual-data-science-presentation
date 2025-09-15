@@ -5,13 +5,6 @@ author: |
   | Michael Thomas, M.S.
   | Chief Data Scientist
   | Ketchbrook Analytics
-format:
-  revealjs:
-    theme: custom.scss
-    logo: www/ketchbrook_logo.png
-    incremental: false
-    transition: slide
-    preview-links: true
 ---
 
 ## Language Wars!

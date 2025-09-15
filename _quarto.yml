@@ -1,0 +1,11 @@
+project:
+  title: Building Multilingual Data Science Teams
+  execute-dir: project
+
+format:
+  revealjs:
+    theme: custom.scss
+    logo: www/ketchbrook_logo.png
+    incremental: false
+    transition: slide
+    preview-links: true
