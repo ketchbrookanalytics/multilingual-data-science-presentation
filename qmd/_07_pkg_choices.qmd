@@ -1,0 +1,536 @@
+## Package Choices
+
+![](www/michael-speech-bubble.png)
+
+::: {.notes}
+
+- We just talked about package versions, but let's talk about choosing which package to use at all -- this is pillar number 2
+- Here's the question I'm always asking myself
+- The choice of packages you use is the second thing that can really drive success for an effective multilingual team
+
+:::
+
+## Package Choices: dplyr & polars {transition="none-out"}
+
+::: {.columns}
+::: {.column}
+
+```{.r}
+library(dplyr)
+
+df <-
+    mtcars |>
+        filter(
+            mpg > 20
+        ) |>
+        select(wt) |>
+        arrange(desc(wt)) |>
+        head(5)
+#
+```
+
+![](www/dplyr-logo.png)
+
+:::
+::: {.column}
+
+```{.python}
+import polars as pl
+
+df = (
+    mtcars
+    .filter(
+        (pl.col("mpg") > 20)
+    )
+    .select("wt")
+    .sort("wt", descending=True)
+    .head(5)
+)
+```
+
+![](www/polars-logo.png)
+
+:::
+:::
+
+::: {.notes}
+
+- In the next few slides, you'll see R code examples on the left side, and Python code examples on the right side of the screen
+- This goes somewhat back to my slide where I mentioned that everything great in each language had been ported to the other language, but it somewhat goes beyond that; I think the great *ideas* are being borrowed from each language
+- The python package {polars} is a great example. The author of polars, Ritchie Vink, has mentioned in a bunch of interviews that {polars} takes a lot inspiration from the tidyverse in R
+- We know that data prep is 80% of data science, so the methodology and opinions you choose for your data prep code is important
+- Our choice is typically {polars} for Python data prep or {dplyr} for R data prep, because, not only are they two of the most popular data prep libraries in their respective languages, but they are also syntactically *very* similar
+
+:::
+
+## Package Choices: dplyr & polars {transition="none"}
+
+::: {.columns}
+::: {.column}
+
+```{.r code-line-numbers="5-7"}
+library(dplyr)
+
+df <-
+    mtcars |>
+        filter(
+            mpg > 20
+        ) |>
+        select(wt) |>
+        arrange(desc(wt)) |>
+        head(5)
+#
+```
+
+:::
+::: {.column}
+
+```{.python code-line-numbers="5-7"}
+import polars as pl
+
+df = (
+    mtcars
+    .filter(
+        (pl.col("mpg") > 20)
+    )
+    .select("wt")
+    .sort("wt", descending=True)
+    .head(5)
+)
+```
+
+:::
+:::
+
+## Package Choices: dplyr & polars {transition="none"}
+
+::: {.columns}
+::: {.column}
+
+```{.r code-line-numbers="8"}
+library(dplyr)
+
+df <-
+    mtcars |>
+        filter(
+            mpg > 20
+        ) |>
+        select(wt) |>
+        arrange(desc(wt)) |>
+        head(5)
+#
+```
+
+:::
+::: {.column}
+
+```{.python code-line-numbers="8"}
+import polars as pl
+
+df = (
+    mtcars
+    .filter(
+        (pl.col("mpg") > 20)
+    )
+    .select("wt")
+    .sort("wt", descending=True)
+    .head(5)
+)
+```
+
+:::
+:::
+
+## Package Choices: dplyr & polars {transition="none"}
+
+::: {.columns}
+::: {.column}
+
+```{.r code-line-numbers="9"}
+library(dplyr)
+
+df <-
+    mtcars |>
+        filter(
+            mpg > 20
+        ) |>
+        select(wt) |>
+        arrange(desc(wt)) |>
+        head(5)
+#
+```
+
+:::
+::: {.column}
+
+```{.python code-line-numbers="9"}
+import polars as pl
+
+df = (
+    mtcars
+    .filter(
+        (pl.col("mpg") > 20)
+    )
+    .select("wt")
+    .sort("wt", descending=True)
+    .head(5)
+)
+```
+
+:::
+:::
+
+## Package Choices: dplyr & polars {transition="none"}
+
+::: {.columns}
+::: {.column}
+
+```{.r code-line-numbers="10"}
+library(dplyr)
+
+df <-
+    mtcars |>
+        filter(
+            mpg > 20
+        ) |>
+        select(wt) |>
+        arrange(desc(wt)) |>
+        head(5)
+#
+```
+
+:::
+::: {.column}
+
+```{.python code-line-numbers="10"}
+import polars as pl
+
+df = (
+    mtcars
+    .filter(
+        (pl.col("mpg") > 20)
+    )
+    .select("wt")
+    .sort("wt", descending=True)
+    .head(5)
+)
+```
+
+:::
+:::
+
+::: {.notes}
+
+- {polars} is already pretty good at this, but in situations where we need to manipulate "big data" and {dplyr} isn't providing enough horsepower, you could opt for the {arrow} R package to continue to leverage a lot of {dplyr} syntax, but there's another interesting option that's perhaps even more language agnostic, courtesy of a Posit Conf keynote speaker last year...
+
+:::
+
+## Package Choices: DuckDB
+
+![](www/duckdb-logo.png)
+
+## Package Choices: DuckDB {transition="none-out"}
+
+::: {.columns}
+::: {.column}
+
+```{.r}
+library(duckdb)
+
+# Connect to DuckDB (in-memory db)
+conn <- dbConnect(duckdb::duckdb())
+
+# Define SQL query
+query <- "
+    SELECT wt
+    FROM mtcars
+    WHERE mpg > 20
+    ORDER BY wt DESC
+    LIMIT 5
+"
+
+# Execute query and get results
+result <- dbGetQuery(conn, query)
+```
+
+:::
+::: {.column}
+
+```{.python}
+import duckdb
+
+# Connect to DuckDB (in-memory db)
+conn = duckdb.connect()
+
+# Define SQL query
+query = """
+    SELECT wt
+    FROM mtcars
+    WHERE mpg > 20
+    ORDER BY wt DESC
+    LIMIT 5
+"""
+
+# Execute query and get results
+result = conn.execute(query).df()
+```
+
+:::
+:::
+
+::: {.notes}
+
+- And we have great libraries in both R and Python that allow us to call DuckDB
+
+:::
+
+## Package Choices: DuckDB {transition="none"}
+
+::: {.columns}
+::: {.column}
+
+```{.r code-line-numbers="4,16"}
+library(duckdb)
+
+# Connect to DuckDB (in-memory db)
+conn <- dbConnect(duckdb::duckdb())
+
+# Define SQL query
+query <- "
+    SELECT wt
+    FROM mtcars
+    WHERE mpg > 20
+    ORDER BY wt DESC
+    LIMIT 5
+"
+
+# Execute query and get results
+result <- dbGetQuery(conn, query)
+```
+
+:::
+::: {.column}
+
+```{.python code-line-numbers="4,16"}
+import duckdb
+
+# Connect to DuckDB (in-memory db)
+conn = duckdb.connect()
+
+# Define SQL query
+query = """
+    SELECT wt
+    FROM mtcars
+    WHERE mpg > 20
+    ORDER BY wt DESC
+    LIMIT 5
+"""
+
+# Execute query and get results
+result = conn.execute(query).df()
+```
+
+:::
+:::
+
+::: {.notes}
+
+- In each language, there's a bit of setup in the front (to connect to the database) and some small syntactic differences at the end of the script...
+
+:::
+
+## Package Choices: DuckDB {transition="none"}
+
+::: {.columns}
+::: {.column}
+
+```{.r code-line-numbers="7-13"}
+library(duckdb)
+
+# Connect to DuckDB (in-memory db)
+conn <- dbConnect(duckdb::duckdb())
+
+# Define SQL query
+query <- "
+    SELECT wt
+    FROM mtcars
+    WHERE mpg > 20
+    ORDER BY wt DESC
+    LIMIT 5
+"
+
+# Execute query and get results
+result <- dbGetQuery(conn, query)
+```
+
+:::
+::: {.column}
+
+```{.python code-line-numbers="7-13"}
+import duckdb
+
+# Connect to DuckDB (in-memory db)
+conn = duckdb.connect()
+
+# Define SQL query
+query = """
+    SELECT wt
+    FROM mtcars
+    WHERE mpg > 20
+    ORDER BY wt DESC
+    LIMIT 5
+"""
+
+# Execute query and get results
+result = conn.execute(query).df()
+```
+
+:::
+:::
+
+::: {.notes}
+
+- But everything in the middle is the same!  It's 2025 and SQL will not die -- in fact it's as hot as ever!
+- Using DuckDB is a great way to still have a *heavyweight* analytics engine that's easily portable across languages.
+
+:::
+
+## Package Choices: ggplot2 & plotnine
+
+::: {.columns}
+::: {.column}
+
+```{.r}
+library(ggplot2)
+
+
+ggplot(
+  mtcars,
+  aes(x = wt, y = mpg)
+) +
+  geom_point(color = "red") +
+  geom_smooth(method = "lm")
+#
+```
+
+:::
+::: {.column}
+
+```{.python}
+from plotnine import
+
+(
+  ggplot(
+    mtcars,
+    aes(x = "wt", y = "mpg")
+  ) +
+    geom_point(color = "red") +
+    geom_smooth(method = "lm")
+)
+```
+
+:::
+:::
+
+::: {.notes}
+
+- Let's take a look at another example: {ggplot2} in R and {plotnine} in Python
+- With the exception of quoting column names and wrapping the entire expression in parentheses in Python, the code is *literally* identical
+
+
+
+:::
+
+## Package Choices: gt & great-tables
+
+::: {.columns}
+::: {.column}
+
+```{.r}
+library(gt)
+
+int_cols <- c(
+  "cyl", "vs", "am",
+  "gear", "carb"
+)
+
+
+gt(mtcars) |>
+  tab_header(
+    title = "Awesome mtcars",
+    subtitle = "With 💙 + GT"
+  ) |>
+  fmt_number() |>
+  fmt_integer(columns = int_cols)
+#
+```
+
+:::
+::: {.column}
+
+```{.python}
+from great_tables import GT
+
+int_cols = [
+  "cyl", "vs", "am",
+  "gear", "carb"
+]
+
+(
+  GT(mtcars)
+  .tab_header(
+      title = "Awesome mtcars",
+      subtitle = "With 💙 + GT"
+  .) |>
+  .fmt_number() |>
+  .fmt_integer(columns=int_cols)
+)
+```
+
+:::
+:::
+
+<!-- ## Documentation
+
+* Docstrings / Roxygen should be structured similarly
+* Quarto!
+* GitHub Pages
+* Standardized approach to READMEs
+* Robust explanations within GitHub Issues and PRs (should feel like hand-holding)
+    + This can be hard in a fast-paced environment with tight deadlines, but it will *save* you time in the long run (assuming you're actually taking the time to review)
+* Mermaidjs
+
+- Docstrings / Roxygen
+- GitHub Workflow (SDLC)
+- `README` standardization -->
+
+## Documentation
+
+![](www/dont-forget.png)
+
+## Documentation: Function Documentation Syntax {transition="none-out"}
+
+::: {.columns}
+::: {.column}
+
+```{.r}
+round_up <- function(x, dig) {
+    f <- 10 ** dig
+    out <- ceiling(x * f) / f
+    return(out)
+}
+```
+
+:::
+
+::: {.column}
+
+```{.python}
+def round_up(x, dig):
+    f = 10 ** dig
+    out = np.ceil(x * f) / f
+    return out
+```
+
+:::
+:::

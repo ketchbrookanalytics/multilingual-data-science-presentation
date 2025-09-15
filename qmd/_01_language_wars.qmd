@@ -1,0 +1,11 @@
+## Language Wars!
+
+![](www/r-is-dead-linkedin-post.png)
+
+::: {.notes}
+
+- This is a LinkedIn post that was making the rounds a few months ago; I'm sure maybe even a few of you saw it.
+- It got a lot of buzz online, re-igniting the so-called "language wars" that would pop up every once in awhile in the pre-Elon Twitter days... simpler times...
+- My experience with the R vs. Python debate is a little bit different and doesn't take a side
+
+:::

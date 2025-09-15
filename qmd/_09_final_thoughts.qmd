@@ -1,0 +1,18 @@
+## Final Thoughts
+
+<br>
+
+![](www/final-thoughts.png)
+
+::: {.notes}
+
+
+- **Comment, comment, comment** your code (talking about inline comments; we'll talk about other types of documentation shortly)
+- Lastly, if you're coming from Python and working with an R team that doesn't have a lot of OOP experience (I'd argue that R is used more as a  functional programming language than it is an OOP language), you may want to avoid OOP when a functional approach is just as good
+
+- Empathy mindset; put yourself in the shoes of the reviewer or other team members that may be looking at your code
+- Our team is actually multinlingual not just from a programming language perspective, but also from a spoken language perspective -- there are folks for whom English is their second language; the idiosynchracies that exist within each of our native languages can lead to someone saying something that may be interpreted as incorrect or even offensive -- make sure you figure out what their intention was with that statement before reacting
+    + If you're on the other side of that, make sure you're using language that's as straightforward as possible, or preface what you want to say with something like "I don't know if I'm saying this right..."
+    + Sometimes this can be just as much the case, or just as important, with 2 individuals who are both native English speakers
+
+:::

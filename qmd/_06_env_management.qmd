@@ -1,0 +1,77 @@
+## Environment Management {transition="none"}
+
+<br>
+
+> *"It works on my machine"*
+
+::: {.notes}
+
+* "It works on my machine"
+    + There are still lots of folks out there dealing with this day in & day out
+    + There are also people that don't care -- because they are essentially a lone wolf
+        + I still think these people should care about this... it's a short-sighted approach
+
+:::
+
+## Environment Management {transition="none"}
+
+<br>
+
+::: {.incremental}
+
+1. Operating System
+1. Python and/or R version
+1. Package versions
+
+:::
+
+::: {.notes}
+
+* Requires 3 things:
+    + Operating System
+    + Python and/or R version
+    + Package versions
+
+:::
+
+## Environment Management {transition="none"}
+
+<br>
+
+::: {.columns}
+::: {.column}
+
+**Operating System & Python/R Version**
+
+- Third-party tools:
+    + Posit Workbench
+- Open Source tools:
+    + Containers (Docker / Podman)
+    + Nix
+
+:::
+::: {.column}
+
+**Package Version**
+
+<br>
+
+- Python
+    + `uv`, `venv`, etc.
+- R
+    + {renv}
+
+:::
+:::
+
+::: {.notes}
+
+- On the Operating System & Python/R Version side, you can typically use the same tooling for both
+- There are three best approaches to doing this < read slide >
+- Going the open source approach requires some DevOps skillsets
+    + Need to ask yourself if that's something you want to undertake or not
+    + Cost / benefit of 3rd party tools (not saying Posit tooling doesn't have another million incredible features -- I'm just looking at this from an environment management standpoint)
+- On the package versioning side, using *virtual environments* which allow you to manage package versions on a project-by-project basis, instead of having some sort of global library for all projects, can be really efficient for collaboration and ensuring you and the rest of your team are working within the same setup
+    + I think there are essentially two leaders these days: `uv` on the Python side, and {renv} on the R side
+
+:::

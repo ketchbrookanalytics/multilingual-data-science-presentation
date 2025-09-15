@@ -1,0 +1,16 @@
+## The Reality
+
+. . .
+
+> Amost everything that used to make Python awesome that wasn't in R has been since ported over to R.
+
+. . .
+
+> And everything that used to make R awesome that wasn't in Python has been since ported over to Python.
+
+::: {.notes}
+
+- Potentially hot take incoming?
+- < read slide >
+
+:::

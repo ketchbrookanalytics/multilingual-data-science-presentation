@@ -1,0 +1,23 @@
+## How Empathy Manifests *Technically*
+
+<br>
+
+. . .
+
+🌍 Environment management
+<br>
+
+. . .
+
+📦 Package choices
+<br>
+
+. . .
+
+📝 Documentation
+
+::: {.notes}
+
+- I'm going to focus on *technical* things you can do that are empathetic towards others on your team < read slide >
+
+:::

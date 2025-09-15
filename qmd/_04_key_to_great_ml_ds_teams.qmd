@@ -1,0 +1,13 @@
+## The Key to a Great Multilingual Data Science Team?
+
+. . .
+
+![](www/empathy2.png){height=450}
+
+::: {.notes}
+
+- So now that I've convinced you that a multilingual data science team can provide a lot of benefits, I'm going to give you the secret to making it work
+- So this is going to sound non-technical, but I've found that the key to making multilingual data science teams work is an extra dose of empathy
+- I'd argue that empathy is an important ingredient in *any* data science team, but especially so for teams using R & Python
+
+:::

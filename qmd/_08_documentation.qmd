@@ -1,0 +1,358 @@
+## Documentation: Function Documentation Syntax {transition="none"}
+
+::: {.columns}
+::: {.column}
+
+```{.r}
+#' Round a number *up* to a
+#' certain number of digits.
+#'
+#' @param x (double) The value
+#'   to be rounded.
+#' @param dig (int) The
+#'   number of digits to round
+#'   to.
+#'
+#' @return The rounded number.
+#'
+#' @examples
+#' # This returns `2.15`
+#' round_up(2.141, 2)
+round_up <- function(x, dig) {
+    f <- 10 ** dig
+    out <- ceiling(x * f) / f
+    return(out)
+}
+```
+
+:::
+
+::: {.column}
+
+```{.python}
+def round_up(x, dig):
+    """
+    Round a number *up* to a
+    certain number of digits.
+
+    Parameters
+    ----------
+    x : float
+        The value to be
+        rounded.
+    dig: int
+        The number of digits to
+        round to.
+
+    Returns
+    -------
+    float
+        The rounded number.
+
+    Examples
+    --------
+    >>> round_up(2.141, 2)
+    2.15
+    """
+    f = 10 ** dig
+    out = np.ceil(x * f) / f
+    return out
+```
+
+:::
+:::
+
+## Documentation: Function Documentation Syntax {transition="none"}
+
+::: {.columns}
+::: {.column}
+
+```{.r code-line-numbers="1-2"}
+#' Round a number *up* to a
+#' certain number of digits.
+#'
+#' @param x (double) The value
+#'   to be rounded.
+#' @param dig (int) The
+#'   number of digits to round
+#'   to.
+#'
+#' @return The rounded number.
+#'
+#' @examples
+#' # This returns `2.15`
+#' round_up(2.141, 2)
+round_up <- function(x, dig) {
+    f <- 10 ** dig
+    out <- ceiling(x * f) / f
+    return(out)
+}
+```
+
+:::
+
+::: {.column}
+
+```{.python code-line-numbers="3-4"}
+def round_up(x, dig):
+    """
+    Round a number *up* to a
+    certain number of digits.
+
+    Parameters
+    ----------
+    x : float
+        The value to be
+        rounded.
+    dig: int
+        The number of digits to
+        round to.
+
+    Returns
+    -------
+    float
+        The rounded number.
+
+    Examples
+    --------
+    >>> round_up(2.141, 2)
+    2.15
+    """
+    f = 10 ** dig
+    out = np.ceil(x * f) / f
+    return out
+```
+
+:::
+:::
+
+## Documentation: Function Documentation Syntax {transition="none"}
+
+::: {.columns}
+::: {.column}
+
+```{.r code-line-numbers="4-8"}
+#' Round a number *up* to a
+#' certain number of digits.
+#'
+#' @param x (double) The value
+#'   to be rounded.
+#' @param dig (int) The
+#'   number of digits to round
+#'   to.
+#'
+#' @return The rounded number.
+#'
+#' @examples
+#' # This returns `2.15`
+#' round_up(2.141, 2)
+round_up <- function(x, dig) {
+    f <- 10 ** dig
+    out <- ceiling(x * f) / f
+    return(out)
+}
+```
+
+:::
+
+::: {.column}
+
+```{.python code-line-numbers="6-13"}
+def round_up(x, dig):
+    """
+    Round a number *up* to a
+    certain number of digits.
+
+    Parameters
+    ----------
+    x : float
+        The value to be
+        rounded.
+    dig: int
+        The number of digits to
+        round to.
+
+    Returns
+    -------
+    float
+        The rounded number.
+
+    Examples
+    --------
+    >>> round_up(2.141, 2)
+    2.15
+    """
+    f = 10 ** dig
+    out = np.ceil(x * f) / f
+    return out
+```
+
+:::
+:::
+
+## Documentation: Function Documentation Syntax {transition="none"}
+
+::: {.columns}
+::: {.column}
+
+```{.r code-line-numbers="10"}
+#' Round a number *up* to a
+#' certain number of digits.
+#'
+#' @param x (double) The value
+#'   to be rounded.
+#' @param dig (int) The
+#'   number of digits to round
+#'   to.
+#'
+#' @return The rounded number.
+#'
+#' @examples
+#' # This returns `2.15`
+#' round_up(2.141, 2)
+round_up <- function(x, dig) {
+    f <- 10 ** dig
+    out <- ceiling(x * f) / f
+    return(out)
+}
+```
+
+:::
+
+::: {.column}
+
+```{.python code-line-numbers="15-18"}
+def round_up(x, dig):
+    """
+    Round a number *up* to a
+    certain number of digits.
+
+    Parameters
+    ----------
+    x : float
+        The value to be
+        rounded.
+    dig: int
+        The number of digits to
+        round to.
+
+    Returns
+    -------
+    float
+        The rounded number.
+
+    Examples
+    --------
+    >>> round_up(2.141, 2)
+    2.15
+    """
+    f = 10 ** dig
+    out = np.ceil(x * f) / f
+    return out
+```
+
+:::
+:::
+
+## Documentation: Function Documentation Syntax {transition="none"}
+
+::: {.columns}
+::: {.column}
+
+```{.r code-line-numbers="12-14"}
+#' Round a number *up* to a
+#' certain number of digits.
+#'
+#' @param x (double) The value
+#'   to be rounded.
+#' @param dig (int) The
+#'   number of digits to round
+#'   to.
+#'
+#' @return The rounded number.
+#'
+#' @examples
+#' # This returns `2.15`
+#' round_up(2.141, 2)
+round_up <- function(x, dig) {
+    f <- 10 ** dig
+    out <- ceiling(x * f) / f
+    return(out)
+}
+```
+
+:::
+
+::: {.column}
+
+```{.python code-line-numbers="20-23"}
+def round_up(x, dig):
+    """
+    Round a number *up* to a
+    certain number of digits.
+
+    Parameters
+    ----------
+    x : float
+        The value to be
+        rounded.
+    dig: int
+        The number of digits to
+        round to.
+
+    Returns
+    -------
+    float
+        The rounded number.
+
+    Examples
+    --------
+    >>> round_up(2.141, 2)
+    2.15
+    """
+    f = 10 ** dig
+    out = np.ceil(x * f) / f
+    return out
+```
+
+:::
+:::
+
+## Documentation
+
+<br>
+
+![](www/git-sdlc.png)
+
+::: {.notes}
+
+- Let's move on to the last pillar of an effective multilingual data science team: Documentation
+- If you're on a data science team, there are probably a few different approaches to how you could structure collaborative workflows when working on projects together.
+- I'm going to show our current approach, which I believe is not only ours, but a similar workflow to what's in place at other organizations we've seen, including Posit
+- First, a user or developer identifies a bug in the software or comes up with an enhancement that we've agreed to implement
+- They write up their idea in a detailed "issue"
+- The first step in working on that is to create a new git *branch* in the repository specifically for the purpose of addressing that "issue"
+- Then they go off and write or modify the code that fixes the bug or adds the enhancement
+- And once they feel like the updated code is in a good spot, they can write up a Pull Request (or "PR") that details how they addressed the issue, what changed, and more
+
+:::
+
+## Documentation: Issues
+
+Anatomy of a good issue:
+
+- Overview
+- Reproducible Example
+- Potential Solution(s)
+
+## Documentation: Pull Requests
+
+Anatomy of a good pull request:
+
+- Overview
+- Details
+- How to Test
+
+## Documentation
+
+![](www/good-issue.mp4)
