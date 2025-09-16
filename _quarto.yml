@@ -2,6 +2,8 @@ project:
   title: Building Multilingual Data Science Teams
   execute-dir: project
 
+engine: knitr
+
 format:
   revealjs:
     theme: custom.scss
