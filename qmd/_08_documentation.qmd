@@ -318,7 +318,7 @@ def round_up(x, dig):
 :::
 :::
 
-## Documentation
+## Documentation: Issues & PRs
 
 <br>
 
@@ -337,22 +337,58 @@ def round_up(x, dig):
 
 :::
 
+## Documentation: Issues {.smaller}
+
+<br>
+
+::: {.callout-note}
+
+## Anatomy of a Good Issue
+
+### Overview
+
+An overview of the issue or proposed enhancement, including rationale.
+
+<br>
+
+### Reproducible Example
+
+Some code that someone else can run to reproduce the issue or show the current shortfall that the proposed enhancement will overcome.
+
+<br>
+
+### Potential Solution(s)
+
+Discussion (possibly including code) regarding possible solution(s).
+
+:::
+
 ## Documentation: Issues
 
-Anatomy of a good issue:
+<!-- ![](www/good-issue.mp4) -->
 
-- Overview
-- Reproducible Example
-- Potential Solution(s)
+## Documentation: Pull Requests {.smaller}
 
-## Documentation: Pull Requests
+<br>
 
-Anatomy of a good pull request:
+::: {.callout-note}
 
-- Overview
-- Details
-- How to Test
+## Anatomy of a Good Pull Request
 
-## Documentation
+### Overview
 
-![](www/good-issue.mp4)
+The purpose of the pull request and the associated Issue(s) it addresses.
+
+<br>
+
+### Details
+
+The technical aspects of how the Issue was addressed in code, as well as any design decisions that were made along the way and/or hurdles that were overcome.
+
+<br>
+
+### How to Test
+
+Provide instructions and code that the reviewer can run to see the impact of your changes.
+
+:::
