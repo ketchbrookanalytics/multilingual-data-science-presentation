@@ -34,32 +34,43 @@
 
 :::
 
-## Environment Management {transition="none"}
-
-<br>
+## Environment Management {.smaller transition="none"}
 
 ::: {.columns}
 ::: {.column}
 
-**Operating System & Python/R Version**
+::: {.callout-note icon="false"}
 
-- Third-party tools:
-    + Posit Workbench
-- Open Source tools:
-    + Containers (Docker / Podman)
-    + Nix
+## Operating System & Python / R Version
+
+### Third-Party Tools
+
+- Posit Workbench
+
+### Open Source tools
+
+- Containers (Docker / Podman)
+- Nix
+
+:::
 
 :::
 ::: {.column}
 
-**Package Version**
+::: {.callout-note icon="false"}
 
-<br>
+## Package Version
 
-- Python
-    + `uv`, `venv`, etc.
-- R
-    + {renv}
+### Python
+
+- `uv`, `venv`, `pipenv`, etc.
+
+### R
+
+- {renv}
+- {packrat}
+
+:::
 
 :::
 :::
