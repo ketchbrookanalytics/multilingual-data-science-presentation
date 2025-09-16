@@ -341,7 +341,7 @@ def round_up(x, dig):
 
 <br>
 
-::: {.callout-note}
+::: {.callout-note icon="false"}
 
 ## Anatomy of a Good Issue
 
@@ -371,7 +371,7 @@ Discussion (possibly including code) regarding possible solution(s).
 
 <br>
 
-::: {.callout-note}
+::: {.callout-note icon="false"}
 
 ## Anatomy of a Good Pull Request
 
