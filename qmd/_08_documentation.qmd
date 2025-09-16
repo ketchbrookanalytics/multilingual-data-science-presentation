@@ -18,8 +18,9 @@
 
 ::: {.notes}
 
-- PSA: Please document your functions! I know it's easy to forget to do and just "get the job done" and "save the documentation for later", but I'm going to let you in on a little secret -- "later" doesn't exist; it never happens. In the infamous words of Shaia Lebouf, DO IT, and do it while you're writing the function.
-- And we can extend this idea of common frameworks across R and Python to our documentation processes as well, starting with functions we write within our code.
+- Here's my public service announcement: Please treat documentation as a first class citizen in your software development practices.
+- Years ago I heard someone say that software shouldn't be a bunch of code with a little bit of documentation -- the ratio should actually be opposite -- in an ideal world we should have a lot of documentation with a little bit of code.
+- I'm going to talk about documentation in the contexts of (a) function documentation and (b) git-based documentation such as Issues and Pull Requests
 
 :::
 
@@ -99,7 +100,7 @@ def round_up(x, dig):
     x : float
         The value to be
         rounded.
-    dig: int
+    dig : int
         The number of digits to
         round to.
 
@@ -119,6 +120,15 @@ def round_up(x, dig):
 ```
 
 :::
+:::
+
+::: {.notes}
+
+- In R, we have Roxygen as the prevailing framework for function documentation
+- In Python, we have a couple of options and a little bit more flexibility -- the prevailing frameworks these days seem to be Google's docstring approach and Scipy's docstring approach
+    + We tend to go with the Scipy approach for no particular reason other than I think it's slightly easier to read and Scipy itself is a little more data-science focused
+- So let's compare the Roxygen framework to the Python Scipy framework
+
 :::
 
 ## Documentation: Function Documentation Syntax {transition="none"}
@@ -163,7 +173,7 @@ def round_up(x, dig):
     x : float
         The value to be
         rounded.
-    dig: int
+    dig : int
         The number of digits to
         round to.
 
@@ -183,6 +193,12 @@ def round_up(x, dig):
 ```
 
 :::
+:::
+
+::: {.notes}
+
+- You can kind of just stick your high-level function description at the beginning of your documentation
+
 :::
 
 ## Documentation: Function Documentation Syntax {transition="none"}
@@ -227,7 +243,7 @@ def round_up(x, dig):
     x : float
         The value to be
         rounded.
-    dig: int
+    dig : int
         The number of digits to
         round to.
 
@@ -247,6 +263,13 @@ def round_up(x, dig):
 ```
 
 :::
+:::
+
+::: {.notes}
+
+- Function arguments are defined in "param" tags in R and under a "Parameter" section in Python
+- Python tends to traditionally be more explicit about supplying argument *types* next to the parameter, and while not required by Roxygen, we've tried to adopt that in R as well
+
 :::
 
 ## Documentation: Function Documentation Syntax {transition="none"}
@@ -291,7 +314,7 @@ def round_up(x, dig):
     x : float
         The value to be
         rounded.
-    dig: int
+    dig : int
         The number of digits to
         round to.
 
@@ -311,6 +334,12 @@ def round_up(x, dig):
 ```
 
 :::
+:::
+
+::: {.notes}
+
+- The output of the function is documented in a "Returns" tag or section in both languages
+
 :::
 
 ## Documentation: Function Documentation Syntax {transition="none"}
@@ -355,7 +384,7 @@ def round_up(x, dig):
     x : float
         The value to be
         rounded.
-    dig: int
+    dig : int
         The number of digits to
         round to.
 
@@ -375,6 +404,12 @@ def round_up(x, dig):
 ```
 
 :::
+:::
+
+::: {.notes}
+
+- And examples are always critical and similarly structured in both examples
+
 :::
 
 ## Documentation: Issues & PRs
@@ -406,19 +441,19 @@ def round_up(x, dig):
 
 ### Overview
 
-An overview of the issue or proposed enhancement, including rationale.
+*An overview of the issue or proposed enhancement, including rationale.*
 
 <br>
 
 ### Reproducible Example
 
-Some code that someone else can run to reproduce the issue or show the current shortfall that the proposed enhancement will overcome.
+*Some code that someone else can run to reproduce the issue or show the current shortfall that the proposed enhancement will overcome.*
 
 <br>
 
 ### Potential Solution(s)
 
-Discussion (possibly including code) regarding possible solution(s).
+*Discussion (possibly including code) regarding possible solution(s).*
 
 :::
 
@@ -436,18 +471,28 @@ Discussion (possibly including code) regarding possible solution(s).
 
 ### Overview
 
-The purpose of the pull request and the associated Issue(s) it addresses.
+*The purpose of the pull request and the associated Issue(s) it addresses.*
 
 <br>
 
 ### Details
 
-The technical aspects of how the Issue was addressed in code, as well as any design decisions that were made along the way and/or hurdles that were overcome.
+*The technical aspects of how the Issue was addressed in code, as well as any design decisions that were made along the way and/or hurdles that were overcome.*
 
 <br>
 
 ### How to Test
 
-Provide instructions and code that the reviewer can run to see the impact of your changes.
+*Provide instructions and code that the reviewer can run to see the impact of your changes.*
+
+:::
+
+## Documentation: Pull Requests
+
+<!-- ![](www/good-issue.mp4) -->
+
+::: {.notes}
+
+- In the interest of time, I won't show more examples beyond Issues and Pull Requests, but we also take a standardized approach to our READMEs in each repository as well, making sure to document -- at a minimum -- (a) the purpose of the repository and project background, (b) prerequisites or dependencies you'll need to run the code, and (c) how to use the software.
 
 :::
