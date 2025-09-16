@@ -1,10 +1,18 @@
 ## Package Choices
 
+::: {.notes}
+
+- We just talked about package versions, but let's talk about choosing which package to use at all
+- In the pillar of Package Choices, empathy means syntax similarity for easier code review and collaboration.
+
+:::
+
+## Package Choices
+
 ![](www/michael-speech-bubble.png)
 
 ::: {.notes}
 
-- We just talked about package versions, but let's talk about choosing which package to use at all -- this is pillar number 2
 - Here's the question I'm always asking myself
 - The choice of packages you use is the second thing that can really drive success for an effective multilingual team
 

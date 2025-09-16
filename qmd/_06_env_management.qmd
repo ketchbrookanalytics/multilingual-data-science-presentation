@@ -1,3 +1,13 @@
+## Environment Management
+
+<!-- TODO // Add picture with first pillar: Environment Management -->
+
+::: {.notes}
+
+- In the pillar of Environment Management, empathy means helping your team spend more time creating value and less time troubleshooting technical issues.
+
+:::
+
 ## Environment Management {transition="none"}
 
 <br>

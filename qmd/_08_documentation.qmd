@@ -1,16 +1,12 @@
-<!-- ## Documentation
+## Documentation
 
-* Docstrings / Roxygen should be structured similarly
-* Quarto!
-* GitHub Pages
-* Standardized approach to READMEs
-* Robust explanations within GitHub Issues and PRs (should feel like hand-holding)
-    + This can be hard in a fast-paced environment with tight deadlines, but it will *save* you time in the long run (assuming you're actually taking the time to review)
-* Mermaidjs
+<!-- TODO // Add picture with third pillar: documentation -->
 
-- Docstrings / Roxygen
-- GitHub Workflow (SDLC)
-- `README` standardization -->
+::: {.notes}
+
+- In the pillar of Documentation, empathy means providing clear guides and roadmaps for collaborators, including your future self
+
+:::
 
 ## Documentation
 

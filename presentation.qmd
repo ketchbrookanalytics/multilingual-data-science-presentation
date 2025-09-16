@@ -27,14 +27,7 @@ author: |
 
 <!-- ### Feedback
 
-- Add some visual cues that make it obvious to separate 3rd party environment management tooling () and open source tooling
 - Can we pull out any stories?
-- Put a Minimum Reproducible Example in your issues!!
-
-- Add examples
-
-- "In the pillar of Package Choices, empathy means syntax similarity for easy code review"
-    + Do this for all pillars
 
 - "In a talk where we're discussing how to try and bridge the worlds of Python and R, we can't even agree on whether we should use the term 'Multilingual' or 'Polyglot'
 
