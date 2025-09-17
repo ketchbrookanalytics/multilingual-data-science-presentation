@@ -15,8 +15,8 @@
 
 ::: {.notes}
 
-- Here's the question I'm always asking myself
-- The choice of packages you use is the second thing that can really drive success for an effective multilingual team
+- Here's the question I'm always asking myself: "How easy would it be for someone who knows R to review my Python code (and vice versa)?"
+- The choice of packages you use can really impact how successful your multilingual data science team will be
 
 :::
 
@@ -69,7 +69,7 @@ df = (
 - This goes somewhat back to my slide where I mentioned that everything great in each language had been ported to the other language, but it somewhat goes beyond that; I think the great *ideas* are being borrowed from each language
 - The python package {polars} is a great example. The author of polars, Ritchie Vink, has mentioned in a bunch of interviews that {polars} takes a lot inspiration from the tidyverse in R
 - We know that data prep is 80% of data science, so the methodology and opinions you choose for your data prep code is important
-- Our choice is typically {polars} for Python data prep or {dplyr} for R data prep, because, not only are they two of the most popular data prep libraries in their respective languages, but they are also syntactically *very* similar
+- At Ketchbrook, our choice is typically {polars} for Python data prep or {dplyr} for R data prep, because, not only are they two of the most popular data wrangling libraries in their respective languages, but they are also syntactically *very* similar
 
 :::
 
@@ -249,7 +249,7 @@ df = (
 
 ::: {.notes}
 
-- Lastly, we have the trusty "head" function in both dplyr & polars for grabbing the first 5 rows of data after the other upstream ETL takes place
+- Lastly, we have the trusty "head" function from base R & polars for grabbing the first 5 rows of data after the other upstream ETL takes place
 - Now {polars} is already pretty good at this, but in situations where we need to manipulate "big data" and {dplyr} isn't providing enough horsepower, you could opt for the {arrow} R package to continue to leverage a lot of {dplyr} syntax, but there's another interesting option that's perhaps even *more* language agnostic, that's actually courtesy of a Posit Conf keynote speaker last year...
 
 :::
@@ -260,7 +260,7 @@ df = (
 
 ::: {.notes}
 
-- If you haven't heard of it, DuckDB is a zero-dependency analytical database engine that essentially let's you do data wrangling in SQL at lightning-fast speed
+- If you haven't heard of it, DuckDB is a zero-dependency analytical database engine that essentially lets you do data wrangling in SQL at lightning-fast speed
 - I'm underselling it -- if you haven't tried it, I highly encourage you to check it out.
 
 :::
@@ -527,6 +527,6 @@ int_cols = [
 ::: {.notes}
 
 - One last example, {gt} in R versus {great-tables} in Python
-- These last two examples are no accident -- Posit is beyond all of these packages: ggplot2, plotnine, gt, and great-tables; and they have put a lot of work into structuring these packages in a way that preserves a ton of syntax similarity
+- These last two examples are no accident -- Posit is behind all of these four packages: ggplot2, plotnine, gt, and great-tables; and they have put a lot of work into structuring these packages in a way that preserves a ton of syntax similarity
 
 :::

@@ -12,10 +12,14 @@
 
 {{< fa brands bluesky >}} <a href="https://bsky.app/profile/mike-thomas.bsky.social" style="color: #e58c8c;">@mike-thomas.bsky.social</a>
 
+<br>
+
+{{< fa brands github >}} <a href="https://github.com/mthomas-ketchbrook" style="color: #e58c8c;">@mthomas-ketchbrook</a>
+
 ::: {.notes}
 
 - To put this all back together, it's easy to say that successful team collaboration requires empathy, but these are the technical ways that we've "hacked" empathy within our team that keeps everyone happy and productive
-- I'd be remiss not to shout out Emily Reiderer, who previously gave a take called "Python Rgenomics", which was a big inspiration for this talk and how we think about multilingual data science at Ketchbrook, and I'd recommend checking it out as a nice complement to this talk if you're interested in exploring this topic further
-- If you'd like to get in touch with me, you can find me on LinkedIn or BlueSky, or at our company website
+- Lastly a couple quick shout outs -- I'd be remiss not to shout out Emily Reiderer, who previously gave a take called "Python Rgenomics", which was a big inspiration for this talk and how we think about multilingual data science at Ketchbrook, and I'd recommend checking it out as a nice complement to this talk if you're interested in exploring this topic further
+- If you'd like to get in touch with me, you can find me on LinkedIn, BlueSky, or GitHub, or through our company website
 
 :::

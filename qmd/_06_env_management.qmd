@@ -12,14 +12,15 @@
 
 <br>
 
-> *"It works on my machine"*
+> *"But it works on my machine"*
 
 ::: {.notes}
 
-* "It works on my machine"
+* < spoken slowly > "But it works on my machine"... ever heard that phrase?
     + There are still lots of folks out there dealing with this day in & day out
     + There are also people that don't care -- because they are essentially a lone wolf
         + I still think these people should care about this... it's a short-sighted approach
+- But today we're focusing on data science teams, not lone wolves
 
 :::
 
@@ -37,10 +38,10 @@
 
 ::: {.notes}
 
-* Requires 3 things:
-    + Operating System
-    + Python and/or R version
-    + Package versions
+* Successful environment management requires consistency across 3 things:
+    + The operating System
+    + The version of Python or R that you're using
+    + The versions of the individual R or Python packages that you're using
 
 :::
 
@@ -87,12 +88,13 @@
 
 ::: {.notes}
 
-- On the Operating System & Python/R Version side, you can typically use the same tooling for both
-- There are three best approaches to doing this < read slide >
+- On the Operating System & Python/R Version side, you can typically use the same tooling for managing both
+- There are two best approaches to doing this:
+    + Leveraging third party tools like Posit Workbench that allow you to set up your environment in more simplified, point-and-click approach
+    + Or leveraging open source tooling where you will essentially script your environment
 - Going the open source approach requires some DevOps skillsets
-    + Need to ask yourself if that's something you want to undertake or not
-    + Cost / benefit of 3rd party tools (not saying Posit tooling doesn't have another million incredible features -- I'm just looking at this from an environment management standpoint)
-- On the package versioning side, using *virtual environments* which allow you to manage package versions on a project-by-project basis, instead of having some sort of global library for all projects, can be really efficient for collaboration and ensuring you and the rest of your team are working within the same setup
+    + So you'll need to ask yourself if that's something you want to undertake or not, and weigh that against the cost / benefit of something like a Posit Workbench that abstracts a lot of that away for you
+- On the package versioning side, using *virtual environments* -- which allow you to manage package versions on a project-by-project basis, instead of having some sort of global library for all projects -- can be really efficient for collaboration and ensuring you and the rest of your team are working within the same setup
     + I think there are essentially two leaders these days: `uv` on the Python side, and {renv} on the R side
 
 :::

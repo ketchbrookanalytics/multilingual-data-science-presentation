@@ -121,8 +121,8 @@ def round_up(x, dig):
 ::: {.notes}
 
 - In R, we have Roxygen as the prevailing framework for function documentation
-- In Python, we have a couple of options and a little bit more flexibility -- the prevailing frameworks these days seem to be Google's docstring approach and Scipy's docstring approach
-    + We tend to go with the Scipy approach for no particular reason other than I think it's slightly easier to read and Scipy itself is a little more data-science focused
+- In Python, we have a couple of options and a little bit more flexibility -- the prevailing two options these days seem to be either Google or Scipy's approach to docstrings
+    + Within our team, we tend to go with the Scipy approach for no particular reason other than I think it's slightly easier to read and Scipy itself is a little more data-science focused
 - So let's compare the Roxygen framework to the Python Scipy framework
 
 :::
@@ -404,7 +404,8 @@ def round_up(x, dig):
 
 ::: {.notes}
 
-- And examples are always critical and similarly structured in both examples
+- And examples are always critical and similarly structured in both cases
+- When we leverage these parallels in how we document our functions across the two languages, it's yet another relatively simple way that we make it easier to cross the language aisle and work together
 
 :::
 
@@ -416,14 +417,13 @@ def round_up(x, dig):
 
 ::: {.notes}
 
-- Let's move on to the last pillar of an effective multilingual data science team: Documentation
-- If you're on a data science team, there are probably a few different approaches to how you could structure collaborative workflows when working on projects together.
+- Jumping now to our approach to what I'll call GitHub < air quotes > "documentation" via isues and pull requests
+- If you're on a data science team, there are probably a few different approaches to how you could structure your collaborative workflows
 - I'm going to show our current approach, which I believe is not only ours, but a similar workflow to what's in place at other organizations we've seen, including Posit
-- First, a user or developer identifies a bug in the software or comes up with an enhancement that we've agreed to implement
-- They write up their idea in a detailed "issue"
-- The first step in working on that is to create a new git *branch* in the repository specifically for the purpose of addressing that "issue"
+- First, a user or developer identifies a bug in the software or comes up with an enhancement that we've agreed to implement, and they write this up in a detailed "issue"
+- Once that issue has been created, when we're ready to actually work on making the required code changes, we first create a new git *branch* in the repository specifically for the purpose of addressing that "issue"
 - Then they go off and write or modify the code that fixes the bug or adds the enhancement
-- And once they feel like the updated code is in a good spot, they can write up a Pull Request (or "PR") that details how they addressed the issue, what changed, and more
+- And once the developer feels like the updated code is in a good spot, they can write up a Pull Request (or "PR", for short) that details how they addressed the issue, what changed, and more
 
 :::
 
@@ -453,9 +453,25 @@ def round_up(x, dig):
 
 :::
 
+::: {.notes}
+
+- Let's focus first on Issues
+- A good issue is composed of 3 parts:
+    + First, an overview of the bug you're encountering or the enhancement you're proposing, including the rationale for why we feel a change to the code is necessary
+    + Second, a reprex: a.k.a some code that someone else can run to reproduce the issue or show the current shortfall that the proposed enhancement will overcome
+    + Lastly, a discussion (which may or may not include code) regarding possible solution(s)
+
+:::
+
 ## Documentation: Issues
 
 {{< video www/good-issue.mp4 >}}
+
+::: {.notes}
+
+- I thought I'd show an example "real-world" GitHub Issue we've authored that contains this structure: an overview, a reproducible example, and a possible solution that's being provided
+
+:::
 
 ## Documentation: Pull Requests {.smaller}
 
@@ -483,12 +499,24 @@ def round_up(x, dig):
 
 :::
 
+::: {.notes}
+
+- On the Pull Requests side, it's very similar
+- A good pull request is also composed of 3 parts:
+    + First, the purpose of the pull request and the associated Issue -- or Issues -- that it addresses
+    + Second, a more "in the weeds" section that details the technical aspects of how the Issue was addressed in code, as well as any design decisions that were made along the way, or any hurdles that were overcome
+    + Lastly, instructions and code that the reviewer can run to see the impact of your changes
+
+:::
+
 ## Documentation: Pull Requests
 
 {{< video www/good-pr.mp4 height="500" >}}
 
 ::: {.notes}
 
+- I'm going to pick on Ivan on our team for a minute here, because he does an awesome job at this
+    + Here's an example of a GitHub Pull Request he authored containing those three components I just mentioned: an overview, a "details" section, a "test" section, and even a "discussion" section that provides some additional context to the reviewer
 - In the interest of time, I won't show more examples beyond Issues and Pull Requests, but we also take a standardized approach to our READMEs in each repository as well, making sure to document -- at a minimum -- (a) the purpose of the repository and project background, (b) prerequisites or dependencies you'll need to run the code, and (c) how to use the software.
 
 :::
