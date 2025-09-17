@@ -4,7 +4,7 @@
 
 ::: {.notes}
 
-- I'm going to focus on *technical* things you can do that are empathetic towards others on your team, and I'm going to break it down into three areas
+- I'm going to focus on *technical* things you can do that are empathetic towards others on your team, and I'm going to break it down into three areas < increment >
 - < read slide >
 
 :::
@@ -30,5 +30,6 @@
 ::: {.notes}
 
 - And I like to think of these as the three *pillars* of technical empathy, and we'll revisit this "pillar" concept throughout this presentation
+- And we'll start with the first pillar: Environment Management
 
 :::

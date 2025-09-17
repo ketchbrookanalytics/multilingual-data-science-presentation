@@ -12,9 +12,9 @@
 
 ::: {.notes}
 
-- So Michael, if all of the good stuff is in both languages, then why not just pick one?  I can think of at least 3 reasons why...
+- So Michael, if all of the good stuff is in both languages, then why not just pick one?  I can think of at least 3 reasons why... < increment list >
 - First, if you're looking for good data science candidates to build out your team, limiting your search to only candidates who know one language or the other can slow your hiring process
 - Second, once in awhile, I *will* run into a problem I'm trying to solve where one language has the perfect package and the other doesn't
-- Lastly, I work at a consulting firm, and the fact that we can offer our clients the option to *choose* the language they want us to build the solution in is huge
+- Lastly, I work at a consulting firm, and the fact that we can offer our clients the option to *choose* the language they want us to build the solution in is a huge value proposition that we have
 
 :::
