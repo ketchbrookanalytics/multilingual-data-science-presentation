@@ -1,6 +1,6 @@
-## Documentation
+## Documentation {transition="none"}
 
-<!-- TODO // Add picture with third pillar: documentation -->
+![](www/pillars-3.png)
 
 ::: {.notes}
 
@@ -8,7 +8,7 @@
 
 :::
 
-## Documentation
+## Documentation {transition="none"}
 
 ![](www/dont-forget.png)
 
@@ -455,7 +455,7 @@ def round_up(x, dig):
 
 ## Documentation: Issues
 
-<!-- ![](www/good-issue.mp4) -->
+{{< video www/good-issue.mp4 >}}
 
 ## Documentation: Pull Requests {.smaller}
 
@@ -485,7 +485,7 @@ def round_up(x, dig):
 
 ## Documentation: Pull Requests
 
-<!-- ![](www/good-issue.mp4) -->
+{{< video www/good-pr.mp4 height="500" >}}
 
 ::: {.notes}
 

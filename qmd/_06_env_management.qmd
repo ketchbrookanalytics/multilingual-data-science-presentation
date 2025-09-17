@@ -1,6 +1,6 @@
 ## Environment Management
 
-<!-- TODO // Add picture with first pillar: Environment Management -->
+![](www/pillars-1.png)
 
 ::: {.notes}
 

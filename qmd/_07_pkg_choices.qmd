@@ -1,5 +1,7 @@
 ## Package Choices
 
+![](www/pillars-2.png)
+
 ::: {.notes}
 
 - We just talked about package versions, but let's talk about choosing which package to use at all
@@ -63,7 +65,7 @@ df = (
 
 ::: {.notes}
 
-- In the next few slides, you'll see R code examples on the left side, and Python code examples on the right side of the screen
+- In these next few slides, you'll see R code examples on the left side, and Python code examples on the right side of the screen
 - This goes somewhat back to my slide where I mentioned that everything great in each language had been ported to the other language, but it somewhat goes beyond that; I think the great *ideas* are being borrowed from each language
 - The python package {polars} is a great example. The author of polars, Ritchie Vink, has mentioned in a bunch of interviews that {polars} takes a lot inspiration from the tidyverse in R
 - We know that data prep is 80% of data science, so the methodology and opinions you choose for your data prep code is important
@@ -110,6 +112,12 @@ df = (
 :::
 :::
 
+::: {.notes}
+
+- You want to filter data in your data frame? Use the "filter" function in either package and specify the column and its constraint.
+
+:::
+
 ## Package Choices: dplyr & polars {transition="none"}
 
 ::: {.columns}
@@ -149,6 +157,12 @@ df = (
 :::
 :::
 
+::: {.notes}
+
+- Need to select a specific column or columns?  Use the "select" verb.
+
+:::
+
 ## Package Choices: dplyr & polars {transition="none"}
 
 ::: {.columns}
@@ -186,6 +200,12 @@ df = (
 ```
 
 :::
+:::
+
+::: {.notes}
+
+- And because nothing is *completely* perfect, we have the "arrange" verb in dplyr and "sort" in polars, with some slight differences in direction such that "descending" is a *function* in dplyr while it's an *argument* in polars.
+
 :::
 
 ## Package Choices: dplyr & polars {transition="none"}
@@ -229,13 +249,21 @@ df = (
 
 ::: {.notes}
 
-- {polars} is already pretty good at this, but in situations where we need to manipulate "big data" and {dplyr} isn't providing enough horsepower, you could opt for the {arrow} R package to continue to leverage a lot of {dplyr} syntax, but there's another interesting option that's perhaps even more language agnostic, courtesy of a Posit Conf keynote speaker last year...
+- Lastly, we have the trusty "head" function in both dplyr & polars for grabbing the first 5 rows of data after the other upstream ETL takes place
+- Now {polars} is already pretty good at this, but in situations where we need to manipulate "big data" and {dplyr} isn't providing enough horsepower, you could opt for the {arrow} R package to continue to leverage a lot of {dplyr} syntax, but there's another interesting option that's perhaps even *more* language agnostic, that's actually courtesy of a Posit Conf keynote speaker last year...
 
 :::
 
 ## Package Choices: DuckDB
 
 ![](www/duckdb-logo.png)
+
+::: {.notes}
+
+- If you haven't heard of it, DuckDB is a zero-dependency analytical database engine that essentially let's you do data wrangling in SQL at lightning-fast speed
+- I'm underselling it -- if you haven't tried it, I highly encourage you to check it out.
+
+:::
 
 ## Package Choices: DuckDB {transition="none-out"}
 
@@ -288,7 +316,7 @@ result = conn.execute(query).df()
 
 ::: {.notes}
 
-- And we have great libraries in both R and Python that allow us to call DuckDB
+- But beyond that, we have great libraries in both R and Python that allow us to call DuckDB
 
 :::
 
@@ -399,7 +427,7 @@ result = conn.execute(query).df()
 ::: {.notes}
 
 - But everything in the middle is the same!  It's 2025 and SQL will not die -- in fact it's as hot as ever!
-- Using DuckDB is a great way to still have a *heavyweight* analytics engine that's easily portable across languages.
+- Using DuckDB is a great way to still have a *heavyweight* analytics engine that's easily portable across languages. If I had longer version of this data wrangling script in R that I needed to switch to Python for some reason, it would be extremely easy to do so -- I would only have to slightly alter the code at the very beginning and the very end.
 
 :::
 
@@ -444,8 +472,6 @@ from plotnine import
 
 - Let's take a look at another example: {ggplot2} in R and {plotnine} in Python
 - With the exception of quoting column names and wrapping the entire expression in parentheses in Python, the code is *literally* identical
-
-
 
 :::
 
@@ -496,4 +522,11 @@ int_cols = [
 ```
 
 :::
+:::
+
+::: {.notes}
+
+- One last example, {gt} in R versus {great-tables} in Python
+- These last two examples are no accident -- Posit is beyond all of these packages: ggplot2, plotnine, gt, and great-tables; and they have put a lot of work into structuring these packages in a way that preserves a ton of syntax similarity
+
 :::
