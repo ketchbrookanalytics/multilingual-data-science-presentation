@@ -17,6 +17,9 @@ jobs:
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
 
+      - name: Add FontAwesome extension
+        run: quarto add quarto-ext/fontawesome --no-prompt
+
       - name: Render and Publish
         uses: quarto-dev/quarto-actions/publish@v2
         with:
