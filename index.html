@@ -231,7 +231,7 @@
 <h2>The Reality</h2>
 <aside class="notes">
 <ul>
-<li>Potentially hot take incoming?</li>
+<li>This might be a hot take, but…</li>
 <li>&lt; read slide &gt;</li>
 </ul>
 <style type="text/css">
@@ -287,7 +287,7 @@
 <h2>The Key to a Great Multilingual Data Science Team?</h2>
 <aside class="notes">
 <ul>
-<li>So now that I’ve convinced you that a multilingual data science team can provide a lot of benefits, I’m going to give you the secret to making it work &lt; increment &gt;</li>
+<li>So now that I’ve convinced you that a multilingual data science team can provide a lot of benefits, I’m going to let you in on the secret to making it work &lt; increment &gt;</li>
 <li>So this is going to sound non-technical, but I’ve found that the key to making multilingual data science teams work is an extra dose of empathy</li>
 <li>I’d argue that empathy is an important ingredient in <em>any</em> data science team, but <em>especially so</em> for teams using R &amp; Python together</li>
 </ul>
@@ -390,7 +390,7 @@
 <li>I still think these people should care about this… it’s a short-sighted approach</li>
 </ul></li>
 </ul></li>
-<li>But today we’re focusing on data science teams, not lone wolves</li>
+<li>But today we’re focusing on data science teams, not lone wolves, and the idea that you want the code that you’re running on your own laptop to also run successfully somewhere else</li>
 </ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -529,7 +529,7 @@
 
 <img data-src="www/michael-speech-bubble.png" class="r-stretch"><aside class="notes">
 <ul>
-<li>Here’s the question I’m always asking myself: “How easy would it be for someone who knows R to review my Python code (and vice versa)?”</li>
+<li>Here’s the big question I ask myself every day: “How easy would it be for someone who knows R to review my Python code (and vice versa)?”</li>
 <li>The choice of packages you use can really impact how successful your multilingual data science team will be</li>
 </ul>
 <style type="text/css">
@@ -578,7 +578,7 @@
 <ul>
 <li>In these next few slides, you’ll see R code examples on the left side, and Python code examples on the right side of the screen</li>
 <li>This goes somewhat back to my slide where I mentioned that everything great in each language had been ported to the other language, but it somewhat goes beyond that; I think the great <em>ideas</em> are being borrowed from each language</li>
-<li>The python package {polars} is a great example. The author of polars, Ritchie Vink, has mentioned in a bunch of interviews that {polars} takes a lot inspiration from the tidyverse in R</li>
+<li>The python package {polars} is a great example. The author of polars, Ritchie Vink, has mentioned in a bunch of interviews that {polars} takes a lot inspiration from the tidyverse in R, and in a minute here I think we’ll show you just how true that is</li>
 <li>We know that data prep is 80% of data science, so the methodology and opinions you choose for your data prep code is important</li>
 <li>At Ketchbrook, our choice is typically {polars} for Python data prep or {dplyr} for R data prep, because, not only are they two of the most popular data wrangling libraries in their respective languages, but they are also syntactically <em>very</em> similar</li>
 </ul>
@@ -757,6 +757,7 @@
 <aside class="notes">
 <ul>
 <li>Lastly, we have the trusty “head” function from base R &amp; polars for grabbing the first 5 rows of data after the other upstream ETL takes place</li>
+<li>These are just a few functions, but if you further explore the {dplyr} and {polars} packages, you’ll continue to find these syntax similarities</li>
 <li>Now {polars} is already pretty good at this, but in situations where we need to manipulate “big data” and {dplyr} isn’t providing enough horsepower, you could opt for the {arrow} R package to continue to leverage a lot of {dplyr} syntax, but there’s another interesting option that’s perhaps even <em>more</em> language agnostic, that’s actually courtesy of a Posit Conf keynote speaker last year…</li>
 </ul>
 <style type="text/css">
@@ -776,6 +777,7 @@
 
 <img data-src="www/duckdb-logo.png" class="r-stretch"><aside class="notes">
 <ul>
+<li>And that’s DuckDB</li>
 <li>If you haven’t heard of it, DuckDB is a zero-dependency analytical database engine that essentially lets you do data wrangling in SQL at lightning-fast speed</li>
 <li>I’m underselling it – if you haven’t tried it, I highly encourage you to check it out.</li>
 </ul>
@@ -885,7 +887,7 @@
 </div></div>
 <aside class="notes">
 <ul>
-<li>In each language, there’s a bit of setup in the front (to connect to the database) and some small syntactic differences at the end of the script…</li>
+<li>In each language, there’s a bit of setup in the front to connect to the database, and some small syntactic differences at the end of the script…</li>
 </ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -939,7 +941,7 @@
 </div></div>
 <aside class="notes">
 <ul>
-<li>But everything in the middle is the same! It’s 2025 and SQL will not die – in fact it’s as hot as ever!</li>
+<li>But everything in the middle is the same! The year is 2025 and SQL will not die – in fact I’d argue that it’s as hot as ever!</li>
 <li>Using DuckDB is a great way to still have a <em>high-powered</em> analytics engine that’s easily portable across languages. If I had longer version of this data wrangling script in R that I needed to switch to Python for some reason, it would be extremely easy to do so – I would only have to slightly alter the code at the very beginning and the very end.</li>
 </ul>
 <style type="text/css">
@@ -1031,13 +1033,13 @@
 <span id="cb20-11"><a href=""></a>      title <span class="op">=</span> <span class="st">"Awesome mtcars"</span>,</span>
 <span id="cb20-12"><a href=""></a>      subtitle <span class="op">=</span> <span class="st">"With 💙 + GT"</span></span>
 <span id="cb20-13"><a href=""></a>  .) <span class="op">|&gt;</span></span>
-<span id="cb20-14"><a href=""></a>  .fmt_number() <span class="op">|&gt;</span></span>
+<span id="cb20-14"><a href=""></a>  .fmt_number()</span>
 <span id="cb20-15"><a href=""></a>  .fmt_integer(columns<span class="op">=</span>int_cols)</span>
 <span id="cb20-16"><a href=""></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div></div>
 <aside class="notes">
 <ul>
-<li>One last example, {gt} in R versus {great-tables} in Python</li>
+<li>One last example, {gt} in R versus {great-tables} in Python… cue The Office meme with Pam saying “They’re literally the same picture”</li>
 <li>These last two examples are no accident – Posit is behind all of these four packages: ggplot2, plotnine, gt, and great-tables; and they have put a lot of work into structuring these packages in a way that preserves a ton of syntax similarity</li>
 </ul>
 <style type="text/css">
@@ -1057,7 +1059,7 @@
 
 <img data-src="www/pillars-3.png" class="r-stretch"><aside class="notes">
 <ul>
-<li>In the final pillar of Documentation, empathy means providing clear guides and roadmaps for collaborators, including your future self</li>
+<li>In our final pillar today – Documentation – empathy means providing clear guides and roadmaps for collaborators, including your future self</li>
 </ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -1077,8 +1079,8 @@
 <img data-src="www/dont-forget.png" class="r-stretch"><aside class="notes">
 <ul>
 <li>Here’s my public service announcement: Please treat documentation as a first class citizen in your software development practices.</li>
-<li>Years ago I heard someone say that software shouldn’t be a bunch of code with a little bit of documentation – the ratio should actually be opposite – in an ideal world we should have a lot of documentation with a little bit of code.</li>
-<li>I’m going to talk about documentation in the contexts of (a) function documentation and (b) git-based documentation such as Issues and Pull Requests</li>
+<li>Years ago I heard someone say – I think it was JD Long – that software shouldn’t be a bunch of code with a little bit of documentation – the ratio should actually be opposite – in an ideal world we should have a lot of documentation with a little bit of code.</li>
+<li>I’m going to talk about documentation in the contexts of (a) function documentation and (b) what I call git-based documentation such as Issues and Pull Requests</li>
 </ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -1628,8 +1630,9 @@
 
 <img data-src="www/final-thoughts.png" class="r-stretch"><aside class="notes">
 <ul>
-<li>To put this all back together, it’s easy to say that successful team collaboration requires empathy, but these are the technical ways that we’ve “hacked” empathy within our team that keeps everyone happy and productive</li>
-<li>Lastly a couple quick shout outs – I’d be remiss not to mention Emily Reiderer, who previously gave a take called “Python Rgenomics”, which was a big inspiration for this talk and how we think about multilingual data science at Ketchbrook, and I’d recommend checking it out as a nice complement to this talk if you’re interested in exploring this topic further</li>
+<li>So let’s put this all back together</li>
+<li>It’s easy to say that successful team collaboration requires empathy, but these are the technical ways that we’ve “hacked” empathy within our multilingual data science team that keeps everyone happy and productive</li>
+<li>Lastly a couple quick shout outs – I’d be remiss not to mention Emily Reiderer, who previously gave a talk called “Python Rgenomics”, which was a big inspiration for this talk and how we think about multilingual data science at Ketchbrook, and I’d recommend checking it out as a nice complement to this talk if you’re interested in exploring this topic further</li>
 </ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -1652,7 +1655,7 @@
 <p><br></p>
 <p>{{&lt; fa brands bluesky &gt;}} <a href="https://bsky.app/profile/mike-thomas.bsky.social" style="color: #e58c8c;"><span class="citation" data-cites="mike-thomas.bsky.social">@mike-thomas.bsky.social</span></a></p>
 <p><br></p>
-<p>{{&lt; fa brands github &gt;}} <a href="https://github.com/mthomas-ketchbrook" style="color: #e58c8c;"><span class="citation" data-cites="mthomas-ketchbrook">@mthomas-ketchbrook</span></a></p>
+<p>{{&lt; fa brands github &gt;}} <a href="https://github.com/mthomas-ketchbrook" style="color: #e58c8c;">mthomas-ketchbrook</a> | <a href="https://github.com/ketchbrookanalytics" style="color: #e58c8c;">ketchbrookanalytics</a></p>
 <aside class="notes">
 <ul>
 <li>If you’d like to get in touch with me, you can find me on LinkedIn, BlueSky, or GitHub, or through our company website</li>
@@ -1681,7 +1684,7 @@
   <div class="quarto-auto-generated-content" style="display: none;">
 <p><img src="www/ketchbrook_logo.png" class="slide-logo"></p>
 <div class="footer footer-default">
-
+<p>https://ketchbrookanalytics.github.io/multilingual-data-science-presentation</p>
 </div>
 </div></div>
 
