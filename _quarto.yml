@@ -13,3 +13,4 @@ format:
     incremental: false
     transition: slide
     preview-links: true
+    footer: https://ketchbrookanalytics.github.io/multilingual-data-science-presentation
