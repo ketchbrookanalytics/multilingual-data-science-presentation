@@ -10,4 +10,4 @@
 
 . . .
 
-![](www/empathy2.png){height=450}
+![](www/empathy.png){height=450}

@@ -427,7 +427,7 @@ result = conn.execute(query).df()
 ::: {.notes}
 
 - But everything in the middle is the same!  It's 2025 and SQL will not die -- in fact it's as hot as ever!
-- Using DuckDB is a great way to still have a *heavyweight* analytics engine that's easily portable across languages. If I had longer version of this data wrangling script in R that I needed to switch to Python for some reason, it would be extremely easy to do so -- I would only have to slightly alter the code at the very beginning and the very end.
+- Using DuckDB is a great way to still have a *high-powered* analytics engine that's easily portable across languages. If I had longer version of this data wrangling script in R that I needed to switch to Python for some reason, it would be extremely easy to do so -- I would only have to slightly alter the code at the very beginning and the very end.
 
 :::
 

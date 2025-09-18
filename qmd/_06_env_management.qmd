@@ -16,7 +16,7 @@
 
 ::: {.notes}
 
-* < spoken slowly > "But it works on my machine"... ever heard that phrase?
+* < spoken slowly > "But it works on my machine"... show of hands if you've ever heard that phrase?
     + There are still lots of folks out there dealing with this day in & day out
     + There are also people that don't care -- because they are essentially a lone wolf
         + I still think these people should care about this... it's a short-sighted approach
@@ -90,7 +90,7 @@
 
 - On the Operating System & Python/R Version side, you can typically use the same tooling for managing both
 - There are two best approaches to doing this:
-    + Leveraging third party tools like Posit Workbench that allow you to set up your environment in more simplified, point-and-click approach
+    + Leveraging third party tools like Posit Workbench hosted on a dedicated server or cloud that allow you to set up your environment in more simplified, point-and-click approach
     + Or leveraging open source tooling where you will essentially script your environment
 - Going the open source approach requires some DevOps skillsets
     + So you'll need to ask yourself if that's something you want to undertake or not, and weigh that against the cost / benefit of something like a Posit Workbench that abstracts a lot of that away for you

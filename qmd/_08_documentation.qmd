@@ -4,7 +4,7 @@
 
 ::: {.notes}
 
-- In the pillar of Documentation, empathy means providing clear guides and roadmaps for collaborators, including your future self
+- In the final pillar of Documentation, empathy means providing clear guides and roadmaps for collaborators, including your future self
 
 :::
 
@@ -49,8 +49,8 @@ def round_up(x, dig):
 
 ::: {.notes}
 
-- Consider this simple function that rounds a number to a certain number of digits and forces it to round up.
-- The syntax is strikingly similar across both R and Python, but the point here is going to be around the documentation of the function.
+- Consider this simple function that rounds a number to a certain number of digits and forces it to round up
+- You don't need to care about what it's doing, and the syntax is very similar across both R and Python, but the point here is going to be around the *documentation* of the function.
 
 :::
 
@@ -193,7 +193,7 @@ def round_up(x, dig):
 
 ::: {.notes}
 
-- You can kind of just stick your high-level function description at the beginning of your documentation
+- In both cases, you can kind of just stick your high-level function description at the beginning of your documentation
 
 :::
 
@@ -417,10 +417,10 @@ def round_up(x, dig):
 
 ::: {.notes}
 
-- Jumping now to our approach to what I'll call GitHub < air quotes > "documentation" via isues and pull requests
+- Jumping now to our approach to what I'll call GitHub < air quotes > "documentation" via issues and pull requests
 - If you're on a data science team, there are probably a few different approaches to how you could structure your collaborative workflows
 - I'm going to show our current approach, which I believe is not only ours, but a similar workflow to what's in place at other organizations we've seen, including Posit
-- First, a user or developer identifies a bug in the software or comes up with an enhancement that we've agreed to implement, and they write this up in a detailed "issue"
+- First, a user or developer identifies a bug in the software or comes up with an enhancement that they are suggesting implement, and they write this up in a detailed "issue"
 - Once that issue has been created, when we're ready to actually work on making the required code changes, we first create a new git *branch* in the repository specifically for the purpose of addressing that "issue"
 - Then they go off and write or modify the code that fixes the bug or adds the enhancement
 - And once the developer feels like the updated code is in a good spot, they can write up a Pull Request (or "PR", for short) that details how they addressed the issue, what changed, and more
@@ -516,7 +516,7 @@ def round_up(x, dig):
 ::: {.notes}
 
 - I'm going to pick on Ivan on our team for a minute here, because he does an awesome job at this
-    + Here's an example of a GitHub Pull Request he authored containing those three components I just mentioned: an overview, a "details" section, a "test" section, and even a "discussion" section that provides some additional context to the reviewer
+    + Here's an example of a GitHub Pull Request he authored containing those three components I just mentioned < start video >: an overview, a "details" section, a "test" section, and even a "discussion" section that provides some additional context to the reviewer
 - In the interest of time, I won't show more examples beyond Issues and Pull Requests, but we also take a standardized approach to our READMEs in each repository as well, making sure to document -- at a minimum -- (a) the purpose of the repository and project background, (b) prerequisites or dependencies you'll need to run the code, and (c) how to use the software.
 
 :::
