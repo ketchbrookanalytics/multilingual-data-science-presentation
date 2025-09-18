@@ -3,6 +3,8 @@ project:
   execute-dir: project
 
 engine: knitr
+execute:
+  freeze: auto
 
 format:
   revealjs:
