@@ -4,7 +4,7 @@
 
 ::: {.notes}
 
-- In the final pillar of Documentation, empathy means providing clear guides and roadmaps for collaborators, including your future self
+- In our final pillar today -- Documentation -- empathy means providing clear guides and roadmaps for collaborators, including your future self
 
 :::
 
@@ -15,8 +15,8 @@
 ::: {.notes}
 
 - Here's my public service announcement: Please treat documentation as a first class citizen in your software development practices.
-- Years ago I heard someone say that software shouldn't be a bunch of code with a little bit of documentation -- the ratio should actually be opposite -- in an ideal world we should have a lot of documentation with a little bit of code.
-- I'm going to talk about documentation in the contexts of (a) function documentation and (b) git-based documentation such as Issues and Pull Requests
+- Years ago I heard someone say -- I think it was JD Long -- that software shouldn't be a bunch of code with a little bit of documentation -- the ratio should actually be opposite -- in an ideal world we should have a lot of documentation with a little bit of code.
+- I'm going to talk about documentation in the contexts of (a) function documentation and (b) what I call git-based documentation such as Issues and Pull Requests
 
 :::
 

@@ -20,7 +20,7 @@
     + There are still lots of folks out there dealing with this day in & day out
     + There are also people that don't care -- because they are essentially a lone wolf
         + I still think these people should care about this... it's a short-sighted approach
-- But today we're focusing on data science teams, not lone wolves
+- But today we're focusing on data science teams, not lone wolves, and the idea that you want the code that you're running on your own laptop to also run successfully somewhere else
 
 :::
 

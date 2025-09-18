@@ -15,7 +15,7 @@
 
 ::: {.notes}
 
-- Here's the question I'm always asking myself: "How easy would it be for someone who knows R to review my Python code (and vice versa)?"
+- Here's the big question I ask myself every day: "How easy would it be for someone who knows R to review my Python code (and vice versa)?"
 - The choice of packages you use can really impact how successful your multilingual data science team will be
 
 :::
@@ -67,7 +67,7 @@ df = (
 
 - In these next few slides, you'll see R code examples on the left side, and Python code examples on the right side of the screen
 - This goes somewhat back to my slide where I mentioned that everything great in each language had been ported to the other language, but it somewhat goes beyond that; I think the great *ideas* are being borrowed from each language
-- The python package {polars} is a great example. The author of polars, Ritchie Vink, has mentioned in a bunch of interviews that {polars} takes a lot inspiration from the tidyverse in R
+- The python package {polars} is a great example. The author of polars, Ritchie Vink, has mentioned in a bunch of interviews that {polars} takes a lot inspiration from the tidyverse in R, and in a minute here I think we'll show you just how true that is
 - We know that data prep is 80% of data science, so the methodology and opinions you choose for your data prep code is important
 - At Ketchbrook, our choice is typically {polars} for Python data prep or {dplyr} for R data prep, because, not only are they two of the most popular data wrangling libraries in their respective languages, but they are also syntactically *very* similar
 
@@ -250,6 +250,7 @@ df = (
 ::: {.notes}
 
 - Lastly, we have the trusty "head" function from base R & polars for grabbing the first 5 rows of data after the other upstream ETL takes place
+- These are just a few functions, but if you further explore the {dplyr} and {polars} packages, you'll continue to find these syntax similarities
 - Now {polars} is already pretty good at this, but in situations where we need to manipulate "big data" and {dplyr} isn't providing enough horsepower, you could opt for the {arrow} R package to continue to leverage a lot of {dplyr} syntax, but there's another interesting option that's perhaps even *more* language agnostic, that's actually courtesy of a Posit Conf keynote speaker last year...
 
 :::
@@ -260,6 +261,7 @@ df = (
 
 ::: {.notes}
 
+- And that's DuckDB
 - If you haven't heard of it, DuckDB is a zero-dependency analytical database engine that essentially lets you do data wrangling in SQL at lightning-fast speed
 - I'm underselling it -- if you haven't tried it, I highly encourage you to check it out.
 
@@ -371,7 +373,7 @@ result = conn.execute(query).df()
 
 ::: {.notes}
 
-- In each language, there's a bit of setup in the front (to connect to the database) and some small syntactic differences at the end of the script...
+- In each language, there's a bit of setup in the front to connect to the database, and some small syntactic differences at the end of the script...
 
 :::
 
@@ -426,7 +428,7 @@ result = conn.execute(query).df()
 
 ::: {.notes}
 
-- But everything in the middle is the same!  It's 2025 and SQL will not die -- in fact it's as hot as ever!
+- But everything in the middle is the same!  The year is 2025 and SQL will not die -- in fact I'd argue that it's as hot as ever!
 - Using DuckDB is a great way to still have a *high-powered* analytics engine that's easily portable across languages. If I had longer version of this data wrangling script in R that I needed to switch to Python for some reason, it would be extremely easy to do so -- I would only have to slightly alter the code at the very beginning and the very end.
 
 :::
@@ -516,7 +518,7 @@ int_cols = [
       title = "Awesome mtcars",
       subtitle = "With 💙 + GT"
   .) |>
-  .fmt_number() |>
+  .fmt_number()
   .fmt_integer(columns=int_cols)
 )
 ```
@@ -526,7 +528,7 @@ int_cols = [
 
 ::: {.notes}
 
-- One last example, {gt} in R versus {great-tables} in Python
+- One last example, {gt} in R versus {great-tables} in Python... cue The Office meme with Pam saying "It's literally the same picture"
 - These last two examples are no accident -- Posit is behind all of these four packages: ggplot2, plotnine, gt, and great-tables; and they have put a lot of work into structuring these packages in a way that preserves a ton of syntax similarity
 
 :::
