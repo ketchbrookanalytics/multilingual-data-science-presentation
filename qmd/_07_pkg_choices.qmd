@@ -528,7 +528,7 @@ int_cols = [
 
 ::: {.notes}
 
-- One last example, {gt} in R versus {great-tables} in Python... cue The Office meme with Pam saying "It's literally the same picture"
+- One last example, {gt} in R versus {great-tables} in Python... cue The Office meme with Pam saying "They're literally the same picture"
 - These last two examples are no accident -- Posit is behind all of these four packages: ggplot2, plotnine, gt, and great-tables; and they have put a lot of work into structuring these packages in a way that preserves a ton of syntax similarity
 
 :::

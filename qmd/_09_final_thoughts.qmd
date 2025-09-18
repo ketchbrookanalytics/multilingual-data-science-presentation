@@ -4,7 +4,8 @@
 
 ::: {.notes}
 
-- To put this all back together, it's easy to say that successful team collaboration requires empathy, but these are the technical ways that we've "hacked" empathy within our team that keeps everyone happy and productive
+- So let's put this all back together
+- It's easy to say that successful team collaboration requires empathy, but these are the technical ways that we've "hacked" empathy within our multilingual data science team that keeps everyone happy and productive
 - Lastly a couple quick shout outs -- I'd be remiss not to mention Emily Reiderer, who previously gave a talk called "Python Rgenomics", which was a big inspiration for this talk and how we think about multilingual data science at Ketchbrook, and I'd recommend checking it out as a nice complement to this talk if you're interested in exploring this topic further
 
 :::
