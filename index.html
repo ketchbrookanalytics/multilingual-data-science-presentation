@@ -1,0 +1,2070 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="presentation_files/libs/clipboard/clipboard.min.js"></script>
+<script src="presentation_files/libs/quarto-html/tabby.min.js"></script>
+<script src="presentation_files/libs/quarto-html/popper.min.js"></script>
+<script src="presentation_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="presentation_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="presentation_files/libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="presentation_files/libs/quarto-html/quarto-syntax-highlighting-dark-b651517ce65839d647a86e2780455cfb.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="presentation_files/libs/quarto-contrib/videojs/video.min.js"></script>
+<link href="presentation_files/libs/quarto-contrib/videojs/video-js.css" rel="stylesheet">
+<link href="presentation_files/libs/quarto-contrib/fontawesome6-1.2.0/all.min.css" rel="stylesheet">
+<link href="presentation_files/libs/quarto-contrib/fontawesome6-1.2.0/latex-fontsize.css" rel="stylesheet"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.8.24">
+
+  <title>Building Multilingual Data Science Teams</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="presentation_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="presentation_files/libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+      }
+    pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+    div.sourceCode
+      { color: #f8f8f2;  }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #f8f8f2; } /* Normal */
+    code span.al { color: #f07178; } /* Alert */
+    code span.an { color: #d4d0ab; } /* Annotation */
+    code span.at { color: #00e0e0; } /* Attribute */
+    code span.bn { color: #d4d0ab; } /* BaseN */
+    code span.bu { color: #abe338; } /* BuiltIn */
+    code span.cf { color: #ffa07a; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #abe338; } /* Char */
+    code span.cn { color: #ffd700; } /* Constant */
+    code span.co { color: #f8f8f2; font-style: italic; } /* Comment */
+    code span.cv { color: #ffd700; } /* CommentVar */
+    code span.do { color: #f8f8f2; } /* Documentation */
+    code span.dt { color: #ffa07a; } /* DataType */
+    code span.dv { color: #d4d0ab; } /* DecVal */
+    code span.er { color: #f07178; text-decoration: underline; } /* Error */
+    code span.ex { color: #00e0e0; font-weight: bold; } /* Extension */
+    code span.fl { color: #d4d0ab; } /* Float */
+    code span.fu { color: #ffa07a; } /* Function */
+    code span.im { color: #abe338; } /* Import */
+    code span.in { color: #d4d0ab; } /* Information */
+    code span.kw { color: #ffa07a; font-weight: bold; } /* Keyword */
+    code span.op { color: #ffa07a; } /* Operator */
+    code span.ot { color: #00e0e0; } /* Other */
+    code span.pp { color: #dcc6e0; } /* Preprocessor */
+    code span.re { color: #00e0e0; background-color: #f8f8f2; } /* RegionMarker */
+    code span.sc { color: #abe338; } /* SpecialChar */
+    code span.ss { color: #abe338; } /* SpecialString */
+    code span.st { color: #abe338; } /* String */
+    code span.va { color: #00e0e0; } /* Variable */
+    code span.vs { color: #abe338; } /* VerbatimString */
+    code span.wa { color: #dcc6e0; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="presentation_files/libs/revealjs/dist/theme/quarto-5743efa0c80f2387705702cbb9ec4f46.css">
+  <link href="presentation_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="presentation_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="presentation_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="presentation_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+</head>
+<body class="quarto-dark">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title">Building Multilingual Data Science Teams</h1>
+  <p class="subtitle">Should we use R or Python? Yes.</p>
+
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+ 
+</div>
+</div>
+</div>
+
+</section>
+<section id="language-wars" class="slide level2">
+<h2>Language Wars!</h2>
+
+<img data-src="www/r-is-dead-linkedin-post.png" class="r-stretch"><aside class="notes">
+<ul>
+<li>This is a LinkedIn post that was making the rounds a few months ago; I’m sure maybe even a few of you saw it.</li>
+<li>It got a lot of buzz online, re-igniting the so-called “language wars” that would pop up every once in awhile in the pre-Elon Twitter days… simpler times…</li>
+<li>My experience with the R vs.&nbsp;Python debate is a little bit different and doesn’t take a side</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="the-reality" class="slide level2">
+<h2>The Reality</h2>
+<aside class="notes">
+<ul>
+<li>Potentially hot take incoming?</li>
+<li>&lt; read slide &gt;</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<div class="fragment">
+<blockquote>
+<p>Amost everything that used to make Python awesome that wasn’t in R has been since ported over to R.</p>
+</blockquote>
+</div>
+<div class="fragment">
+<blockquote>
+<p>And everything that used to make R awesome that wasn’t in Python has been since ported over to Python.</p>
+</blockquote>
+</div>
+</section>
+<section id="why-have-a-multilingual-team" class="slide level2">
+<h2>Why Have a Multilingual Team?</h2>
+<p><br></p>
+<ul>
+<li class="fragment">Larger potential talent pool</li>
+<li class="fragment">More tools in the toolbox</li>
+<li class="fragment">Dual offering</li>
+</ul>
+<aside class="notes">
+<ul>
+<li>So Michael, if all of the good stuff is in both languages, then why not just pick one? I can think of at least 3 reasons why… &lt; increment &gt;</li>
+<li>First, if you’re looking for good data science candidates to build out your team, limiting your search to only candidates who know one language or the other can slow your hiring process &lt; increment &gt;</li>
+<li>Second, once in awhile, I <em>will</em> run into a problem I’m trying to solve where one language has the perfect package and the other doesn’t &lt; increment &gt;</li>
+<li>Lastly, I work at a consulting firm, and the fact that we can offer our clients the option to <em>choose</em> the language they want us to build the solution in is a huge value proposition that we have</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="the-key-to-a-great-multilingual-data-science-team" class="slide level2">
+<h2>The Key to a Great Multilingual Data Science Team?</h2>
+<aside class="notes">
+<ul>
+<li>So now that I’ve convinced you that a multilingual data science team can provide a lot of benefits, I’m going to give you the secret to making it work &lt; increment &gt;</li>
+<li>So this is going to sound non-technical, but I’ve found that the key to making multilingual data science teams work is an extra dose of empathy</li>
+<li>I’d argue that empathy is an important ingredient in <em>any</em> data science team, but <em>especially so</em> for teams using R &amp; Python together</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<div class="fragment">
+<p><img data-src="www/empathy.png" height="450"></p>
+</div>
+</section>
+<section id="how-empathy-manifests-technically" class="slide level2" data-transition="none">
+<h2>How Empathy Manifests <em>Technically</em></h2>
+<p><br></p>
+<aside class="notes">
+<ul>
+<li>I’m going to focus on <em>technical</em> things you can do that are empathetic towards others on your team, and I’m going to break it down into three areas &lt; increment &gt;</li>
+<li>&lt; read slide &gt;</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<div class="fragment">
+<p>🌍 Environment management <br></p>
+</div>
+<div class="fragment">
+<p>📦 Package choices <br></p>
+</div>
+<div class="fragment">
+<p>📝 Documentation</p>
+</div>
+</section>
+<section id="how-empathy-manifests-technically-1" class="slide level2" data-transition="none">
+<h2>How Empathy Manifests <em>Technically</em></h2>
+
+<img data-src="www/pillars-3.png" class="r-stretch"><aside class="notes">
+<ul>
+<li>And I like to think of these as the three <em>pillars</em> of technical empathy, and we’ll revisit this “pillar” concept throughout this presentation</li>
+<li>And we’ll start with the first pillar: Environment Management</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="environment-management" class="slide level2">
+<h2>Environment Management</h2>
+
+<img data-src="www/pillars-1.png" class="r-stretch"><aside class="notes">
+<ul>
+<li>In the pillar of Environment Management, empathy means helping your team spend more time creating value and less time troubleshooting technical issues.</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="environment-management-1" class="slide level2" data-transition="none">
+<h2>Environment Management</h2>
+<p><br></p>
+<blockquote>
+<p><em>“But it works on my machine”</em></p>
+</blockquote>
+<aside class="notes">
+<ul>
+<li>&lt; spoken slowly &gt; “But it works on my machine”… show of hands if you’ve ever heard that phrase?
+<ul>
+<li>There are still lots of folks out there dealing with this day in &amp; day out</li>
+<li>There are also people that don’t care – because they are essentially a lone wolf
+<ul>
+<li>I still think these people should care about this… it’s a short-sighted approach</li>
+</ul></li>
+</ul></li>
+<li>But today we’re focusing on data science teams, not lone wolves</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="environment-management-2" class="slide level2" data-transition="none">
+<h2>Environment Management</h2>
+<p><br></p>
+<ol type="1">
+<li class="fragment">Operating System</li>
+<li class="fragment">Python and/or R version</li>
+<li class="fragment">Package versions</li>
+</ol>
+<aside class="notes">
+<ul>
+<li>Successful environment management requires consistency across 3 things:
+<ul>
+<li>The operating System</li>
+<li>The version of Python or R that you’re using</li>
+<li>The versions of the individual R or Python packages that you’re using</li>
+</ul></li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="environment-management-3" class="slide level2 smaller" data-transition="none">
+<h2>Environment Management</h2>
+<div class="columns">
+<div class="column">
+<div class="callout callout-note no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Operating System &amp; Python / R Version</strong></p>
+</div>
+<div class="callout-content">
+<h3 id="third-party-tools">Third-Party Tools</h3>
+<ul>
+<li>Posit Workbench</li>
+</ul>
+<h3 id="open-source-tools">Open Source tools</h3>
+<ul>
+<li>Containers (Docker / Podman)</li>
+<li>Nix</li>
+</ul>
+</div>
+</div>
+</div>
+</div><div class="column">
+<div class="callout callout-note no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Package Version</strong></p>
+</div>
+<div class="callout-content">
+<h3 id="python">Python</h3>
+<ul>
+<li><code>uv</code>, <code>venv</code>, <code>pipenv</code>, etc.</li>
+</ul>
+<h3 id="r">R</h3>
+<ul>
+<li>{renv}</li>
+<li>{packrat}</li>
+</ul>
+</div>
+</div>
+</div>
+</div></div>
+<aside class="notes">
+<ul>
+<li>On the Operating System &amp; Python/R Version side, you can typically use the same tooling for managing both</li>
+<li>There are two best approaches to doing this:
+<ul>
+<li>Leveraging third party tools like Posit Workbench hosted on a dedicated server or cloud that allow you to set up your environment in more simplified, point-and-click approach</li>
+<li>Or leveraging open source tooling where you will essentially script your environment</li>
+</ul></li>
+<li>Going the open source approach requires some DevOps skillsets
+<ul>
+<li>So you’ll need to ask yourself if that’s something you want to undertake or not, and weigh that against the cost / benefit of something like a Posit Workbench that abstracts a lot of that away for you</li>
+</ul></li>
+<li>On the package versioning side, using <em>virtual environments</em> – which allow you to manage package versions on a project-by-project basis, instead of having some sort of global library for all projects – can be really efficient for collaboration and ensuring you and the rest of your team are working within the same setup
+<ul>
+<li>I think there are essentially two leaders these days: <code>uv</code> on the Python side, and {renv} on the R side</li>
+</ul></li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="package-choices" class="slide level2">
+<h2>Package Choices</h2>
+
+<img data-src="www/pillars-2.png" class="r-stretch"><aside class="notes">
+<ul>
+<li>We just talked about package versions, but let’s talk about choosing which package to use at all</li>
+<li>In the pillar of Package Choices, empathy means syntax similarity for easier code review and collaboration.</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="package-choices-1" class="slide level2">
+<h2>Package Choices</h2>
+
+<img data-src="www/michael-speech-bubble.png" class="r-stretch"><aside class="notes">
+<ul>
+<li>Here’s the question I’m always asking myself: “How easy would it be for someone who knows R to review my Python code (and vice versa)?”</li>
+<li>The choice of packages you use can really impact how successful your multilingual data science team will be</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="package-choices-dplyr-polars" class="slide level2" data-transition="none-out">
+<h2>Package Choices: dplyr &amp; polars</h2>
+<div class="columns">
+<div class="column">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href=""></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb1-2"><a href=""></a></span>
+<span id="cb1-3"><a href=""></a>df <span class="ot">&lt;-</span></span>
+<span id="cb1-4"><a href=""></a>    mtcars <span class="sc">|&gt;</span></span>
+<span id="cb1-5"><a href=""></a>        <span class="fu">filter</span>(</span>
+<span id="cb1-6"><a href=""></a>            mpg <span class="sc">&gt;</span> <span class="dv">20</span></span>
+<span id="cb1-7"><a href=""></a>        ) <span class="sc">|&gt;</span></span>
+<span id="cb1-8"><a href=""></a>        <span class="fu">select</span>(wt) <span class="sc">|&gt;</span></span>
+<span id="cb1-9"><a href=""></a>        <span class="fu">arrange</span>(<span class="fu">desc</span>(wt)) <span class="sc">|&gt;</span></span>
+<span id="cb1-10"><a href=""></a>        <span class="fu">head</span>(<span class="dv">5</span>)</span>
+<span id="cb1-11"><a href=""></a><span class="co">#</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><img data-src="www/dplyr-logo.png"></p>
+</div><div class="column">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href=""></a><span class="im">import</span> polars <span class="im">as</span> pl</span>
+<span id="cb2-2"><a href=""></a></span>
+<span id="cb2-3"><a href=""></a>df <span class="op">=</span> (</span>
+<span id="cb2-4"><a href=""></a>    mtcars</span>
+<span id="cb2-5"><a href=""></a>    .<span class="bu">filter</span>(</span>
+<span id="cb2-6"><a href=""></a>        (pl.col(<span class="st">"mpg"</span>) <span class="op">&gt;</span> <span class="dv">20</span>)</span>
+<span id="cb2-7"><a href=""></a>    )</span>
+<span id="cb2-8"><a href=""></a>    .select(<span class="st">"wt"</span>)</span>
+<span id="cb2-9"><a href=""></a>    .sort(<span class="st">"wt"</span>, descending<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb2-10"><a href=""></a>    .head(<span class="dv">5</span>)</span>
+<span id="cb2-11"><a href=""></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><img data-src="www/polars-logo.png"></p>
+</div></div>
+<aside class="notes">
+<ul>
+<li>In these next few slides, you’ll see R code examples on the left side, and Python code examples on the right side of the screen</li>
+<li>This goes somewhat back to my slide where I mentioned that everything great in each language had been ported to the other language, but it somewhat goes beyond that; I think the great <em>ideas</em> are being borrowed from each language</li>
+<li>The python package {polars} is a great example. The author of polars, Ritchie Vink, has mentioned in a bunch of interviews that {polars} takes a lot inspiration from the tidyverse in R</li>
+<li>We know that data prep is 80% of data science, so the methodology and opinions you choose for your data prep code is important</li>
+<li>At Ketchbrook, our choice is typically {polars} for Python data prep or {dplyr} for R data prep, because, not only are they two of the most popular data wrangling libraries in their respective languages, but they are also syntactically <em>very</em> similar</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="package-choices-dplyr-polars-1" class="slide level2" data-transition="none">
+<h2>Package Choices: dplyr &amp; polars</h2>
+<div class="columns">
+<div class="column">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3" data-code-line-numbers="5-7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href=""></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb3-2"><a href=""></a></span>
+<span id="cb3-3"><a href=""></a>df <span class="ot">&lt;-</span></span>
+<span id="cb3-4"><a href=""></a>    mtcars <span class="sc">|&gt;</span></span>
+<span id="cb3-5"><a href=""></a>        <span class="fu">filter</span>(</span>
+<span id="cb3-6"><a href=""></a>            mpg <span class="sc">&gt;</span> <span class="dv">20</span></span>
+<span id="cb3-7"><a href=""></a>        ) <span class="sc">|&gt;</span></span>
+<span id="cb3-8"><a href=""></a>        <span class="fu">select</span>(wt) <span class="sc">|&gt;</span></span>
+<span id="cb3-9"><a href=""></a>        <span class="fu">arrange</span>(<span class="fu">desc</span>(wt)) <span class="sc">|&gt;</span></span>
+<span id="cb3-10"><a href=""></a>        <span class="fu">head</span>(<span class="dv">5</span>)</span>
+<span id="cb3-11"><a href=""></a><span class="co">#</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div><div class="column">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4" data-code-line-numbers="5-7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href=""></a><span class="im">import</span> polars <span class="im">as</span> pl</span>
+<span id="cb4-2"><a href=""></a></span>
+<span id="cb4-3"><a href=""></a>df <span class="op">=</span> (</span>
+<span id="cb4-4"><a href=""></a>    mtcars</span>
+<span id="cb4-5"><a href=""></a>    .<span class="bu">filter</span>(</span>
+<span id="cb4-6"><a href=""></a>        (pl.col(<span class="st">"mpg"</span>) <span class="op">&gt;</span> <span class="dv">20</span>)</span>
+<span id="cb4-7"><a href=""></a>    )</span>
+<span id="cb4-8"><a href=""></a>    .select(<span class="st">"wt"</span>)</span>
+<span id="cb4-9"><a href=""></a>    .sort(<span class="st">"wt"</span>, descending<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb4-10"><a href=""></a>    .head(<span class="dv">5</span>)</span>
+<span id="cb4-11"><a href=""></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div></div>
+<aside class="notes">
+<ul>
+<li>You want to filter data in your data frame? Use the “filter” function in either package and specify the column and its constraint.</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="package-choices-dplyr-polars-2" class="slide level2" data-transition="none">
+<h2>Package Choices: dplyr &amp; polars</h2>
+<div class="columns">
+<div class="column">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5" data-code-line-numbers="8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href=""></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb5-2"><a href=""></a></span>
+<span id="cb5-3"><a href=""></a>df <span class="ot">&lt;-</span></span>
+<span id="cb5-4"><a href=""></a>    mtcars <span class="sc">|&gt;</span></span>
+<span id="cb5-5"><a href=""></a>        <span class="fu">filter</span>(</span>
+<span id="cb5-6"><a href=""></a>            mpg <span class="sc">&gt;</span> <span class="dv">20</span></span>
+<span id="cb5-7"><a href=""></a>        ) <span class="sc">|&gt;</span></span>
+<span id="cb5-8"><a href=""></a>        <span class="fu">select</span>(wt) <span class="sc">|&gt;</span></span>
+<span id="cb5-9"><a href=""></a>        <span class="fu">arrange</span>(<span class="fu">desc</span>(wt)) <span class="sc">|&gt;</span></span>
+<span id="cb5-10"><a href=""></a>        <span class="fu">head</span>(<span class="dv">5</span>)</span>
+<span id="cb5-11"><a href=""></a><span class="co">#</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div><div class="column">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6" data-code-line-numbers="8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href=""></a><span class="im">import</span> polars <span class="im">as</span> pl</span>
+<span id="cb6-2"><a href=""></a></span>
+<span id="cb6-3"><a href=""></a>df <span class="op">=</span> (</span>
+<span id="cb6-4"><a href=""></a>    mtcars</span>
+<span id="cb6-5"><a href=""></a>    .<span class="bu">filter</span>(</span>
+<span id="cb6-6"><a href=""></a>        (pl.col(<span class="st">"mpg"</span>) <span class="op">&gt;</span> <span class="dv">20</span>)</span>
+<span id="cb6-7"><a href=""></a>    )</span>
+<span id="cb6-8"><a href=""></a>    .select(<span class="st">"wt"</span>)</span>
+<span id="cb6-9"><a href=""></a>    .sort(<span class="st">"wt"</span>, descending<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb6-10"><a href=""></a>    .head(<span class="dv">5</span>)</span>
+<span id="cb6-11"><a href=""></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div></div>
+<aside class="notes">
+<ul>
+<li>Need to select a specific column or columns? Use the “select” verb.</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="package-choices-dplyr-polars-3" class="slide level2" data-transition="none">
+<h2>Package Choices: dplyr &amp; polars</h2>
+<div class="columns">
+<div class="column">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7" data-code-line-numbers="9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href=""></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb7-2"><a href=""></a></span>
+<span id="cb7-3"><a href=""></a>df <span class="ot">&lt;-</span></span>
+<span id="cb7-4"><a href=""></a>    mtcars <span class="sc">|&gt;</span></span>
+<span id="cb7-5"><a href=""></a>        <span class="fu">filter</span>(</span>
+<span id="cb7-6"><a href=""></a>            mpg <span class="sc">&gt;</span> <span class="dv">20</span></span>
+<span id="cb7-7"><a href=""></a>        ) <span class="sc">|&gt;</span></span>
+<span id="cb7-8"><a href=""></a>        <span class="fu">select</span>(wt) <span class="sc">|&gt;</span></span>
+<span id="cb7-9"><a href=""></a>        <span class="fu">arrange</span>(<span class="fu">desc</span>(wt)) <span class="sc">|&gt;</span></span>
+<span id="cb7-10"><a href=""></a>        <span class="fu">head</span>(<span class="dv">5</span>)</span>
+<span id="cb7-11"><a href=""></a><span class="co">#</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div><div class="column">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8" data-code-line-numbers="9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href=""></a><span class="im">import</span> polars <span class="im">as</span> pl</span>
+<span id="cb8-2"><a href=""></a></span>
+<span id="cb8-3"><a href=""></a>df <span class="op">=</span> (</span>
+<span id="cb8-4"><a href=""></a>    mtcars</span>
+<span id="cb8-5"><a href=""></a>    .<span class="bu">filter</span>(</span>
+<span id="cb8-6"><a href=""></a>        (pl.col(<span class="st">"mpg"</span>) <span class="op">&gt;</span> <span class="dv">20</span>)</span>
+<span id="cb8-7"><a href=""></a>    )</span>
+<span id="cb8-8"><a href=""></a>    .select(<span class="st">"wt"</span>)</span>
+<span id="cb8-9"><a href=""></a>    .sort(<span class="st">"wt"</span>, descending<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb8-10"><a href=""></a>    .head(<span class="dv">5</span>)</span>
+<span id="cb8-11"><a href=""></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div></div>
+<aside class="notes">
+<ul>
+<li>And because nothing is <em>completely</em> perfect, we have the “arrange” verb in dplyr and “sort” in polars, with some slight differences in direction such that “descending” is a <em>function</em> in dplyr while it’s an <em>argument</em> in polars.</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="package-choices-dplyr-polars-4" class="slide level2" data-transition="none">
+<h2>Package Choices: dplyr &amp; polars</h2>
+<div class="columns">
+<div class="column">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9" data-code-line-numbers="10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href=""></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb9-2"><a href=""></a></span>
+<span id="cb9-3"><a href=""></a>df <span class="ot">&lt;-</span></span>
+<span id="cb9-4"><a href=""></a>    mtcars <span class="sc">|&gt;</span></span>
+<span id="cb9-5"><a href=""></a>        <span class="fu">filter</span>(</span>
+<span id="cb9-6"><a href=""></a>            mpg <span class="sc">&gt;</span> <span class="dv">20</span></span>
+<span id="cb9-7"><a href=""></a>        ) <span class="sc">|&gt;</span></span>
+<span id="cb9-8"><a href=""></a>        <span class="fu">select</span>(wt) <span class="sc">|&gt;</span></span>
+<span id="cb9-9"><a href=""></a>        <span class="fu">arrange</span>(<span class="fu">desc</span>(wt)) <span class="sc">|&gt;</span></span>
+<span id="cb9-10"><a href=""></a>        <span class="fu">head</span>(<span class="dv">5</span>)</span>
+<span id="cb9-11"><a href=""></a><span class="co">#</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div><div class="column">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10" data-code-line-numbers="10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href=""></a><span class="im">import</span> polars <span class="im">as</span> pl</span>
+<span id="cb10-2"><a href=""></a></span>
+<span id="cb10-3"><a href=""></a>df <span class="op">=</span> (</span>
+<span id="cb10-4"><a href=""></a>    mtcars</span>
+<span id="cb10-5"><a href=""></a>    .<span class="bu">filter</span>(</span>
+<span id="cb10-6"><a href=""></a>        (pl.col(<span class="st">"mpg"</span>) <span class="op">&gt;</span> <span class="dv">20</span>)</span>
+<span id="cb10-7"><a href=""></a>    )</span>
+<span id="cb10-8"><a href=""></a>    .select(<span class="st">"wt"</span>)</span>
+<span id="cb10-9"><a href=""></a>    .sort(<span class="st">"wt"</span>, descending<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb10-10"><a href=""></a>    .head(<span class="dv">5</span>)</span>
+<span id="cb10-11"><a href=""></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div></div>
+<aside class="notes">
+<ul>
+<li>Lastly, we have the trusty “head” function from base R &amp; polars for grabbing the first 5 rows of data after the other upstream ETL takes place</li>
+<li>Now {polars} is already pretty good at this, but in situations where we need to manipulate “big data” and {dplyr} isn’t providing enough horsepower, you could opt for the {arrow} R package to continue to leverage a lot of {dplyr} syntax, but there’s another interesting option that’s perhaps even <em>more</em> language agnostic, that’s actually courtesy of a Posit Conf keynote speaker last year…</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="package-choices-duckdb" class="slide level2">
+<h2>Package Choices: DuckDB</h2>
+
+<img data-src="www/duckdb-logo.png" class="r-stretch"><aside class="notes">
+<ul>
+<li>If you haven’t heard of it, DuckDB is a zero-dependency analytical database engine that essentially lets you do data wrangling in SQL at lightning-fast speed</li>
+<li>I’m underselling it – if you haven’t tried it, I highly encourage you to check it out.</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="package-choices-duckdb-1" class="slide level2" data-transition="none-out">
+<h2>Package Choices: DuckDB</h2>
+<div class="columns">
+<div class="column">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href=""></a><span class="fu">library</span>(duckdb)</span>
+<span id="cb11-2"><a href=""></a></span>
+<span id="cb11-3"><a href=""></a><span class="co"># Connect to DuckDB (in-memory db)</span></span>
+<span id="cb11-4"><a href=""></a>conn <span class="ot">&lt;-</span> <span class="fu">dbConnect</span>(duckdb<span class="sc">::</span><span class="fu">duckdb</span>())</span>
+<span id="cb11-5"><a href=""></a></span>
+<span id="cb11-6"><a href=""></a><span class="co"># Define SQL query</span></span>
+<span id="cb11-7"><a href=""></a>query <span class="ot">&lt;-</span> <span class="st">"</span></span>
+<span id="cb11-8"><a href=""></a><span class="st">    SELECT wt</span></span>
+<span id="cb11-9"><a href=""></a><span class="st">    FROM mtcars</span></span>
+<span id="cb11-10"><a href=""></a><span class="st">    WHERE mpg &gt; 20</span></span>
+<span id="cb11-11"><a href=""></a><span class="st">    ORDER BY wt DESC</span></span>
+<span id="cb11-12"><a href=""></a><span class="st">    LIMIT 5</span></span>
+<span id="cb11-13"><a href=""></a><span class="st">"</span></span>
+<span id="cb11-14"><a href=""></a></span>
+<span id="cb11-15"><a href=""></a><span class="co"># Execute query and get results</span></span>
+<span id="cb11-16"><a href=""></a>result <span class="ot">&lt;-</span> <span class="fu">dbGetQuery</span>(conn, query)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div><div class="column">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href=""></a><span class="im">import</span> duckdb</span>
+<span id="cb12-2"><a href=""></a></span>
+<span id="cb12-3"><a href=""></a><span class="co"># Connect to DuckDB (in-memory db)</span></span>
+<span id="cb12-4"><a href=""></a>conn <span class="op">=</span> duckdb.<span class="ex">connect</span>()</span>
+<span id="cb12-5"><a href=""></a></span>
+<span id="cb12-6"><a href=""></a><span class="co"># Define SQL query</span></span>
+<span id="cb12-7"><a href=""></a>query <span class="op">=</span> <span class="st">"""</span></span>
+<span id="cb12-8"><a href=""></a><span class="st">    SELECT wt</span></span>
+<span id="cb12-9"><a href=""></a><span class="st">    FROM mtcars</span></span>
+<span id="cb12-10"><a href=""></a><span class="st">    WHERE mpg &gt; 20</span></span>
+<span id="cb12-11"><a href=""></a><span class="st">    ORDER BY wt DESC</span></span>
+<span id="cb12-12"><a href=""></a><span class="st">    LIMIT 5</span></span>
+<span id="cb12-13"><a href=""></a><span class="st">"""</span></span>
+<span id="cb12-14"><a href=""></a></span>
+<span id="cb12-15"><a href=""></a><span class="co"># Execute query and get results</span></span>
+<span id="cb12-16"><a href=""></a>result <span class="op">=</span> conn.execute(query).df()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div></div>
+<aside class="notes">
+<ul>
+<li>But beyond that, we have great libraries in both R and Python that allow us to call DuckDB</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="package-choices-duckdb-2" class="slide level2" data-transition="none">
+<h2>Package Choices: DuckDB</h2>
+<div class="columns">
+<div class="column">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13" data-code-line-numbers="4,16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href=""></a><span class="fu">library</span>(duckdb)</span>
+<span id="cb13-2"><a href=""></a></span>
+<span id="cb13-3"><a href=""></a><span class="co"># Connect to DuckDB (in-memory db)</span></span>
+<span id="cb13-4"><a href=""></a>conn <span class="ot">&lt;-</span> <span class="fu">dbConnect</span>(duckdb<span class="sc">::</span><span class="fu">duckdb</span>())</span>
+<span id="cb13-5"><a href=""></a></span>
+<span id="cb13-6"><a href=""></a><span class="co"># Define SQL query</span></span>
+<span id="cb13-7"><a href=""></a>query <span class="ot">&lt;-</span> <span class="st">"</span></span>
+<span id="cb13-8"><a href=""></a><span class="st">    SELECT wt</span></span>
+<span id="cb13-9"><a href=""></a><span class="st">    FROM mtcars</span></span>
+<span id="cb13-10"><a href=""></a><span class="st">    WHERE mpg &gt; 20</span></span>
+<span id="cb13-11"><a href=""></a><span class="st">    ORDER BY wt DESC</span></span>
+<span id="cb13-12"><a href=""></a><span class="st">    LIMIT 5</span></span>
+<span id="cb13-13"><a href=""></a><span class="st">"</span></span>
+<span id="cb13-14"><a href=""></a></span>
+<span id="cb13-15"><a href=""></a><span class="co"># Execute query and get results</span></span>
+<span id="cb13-16"><a href=""></a>result <span class="ot">&lt;-</span> <span class="fu">dbGetQuery</span>(conn, query)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div><div class="column">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14" data-code-line-numbers="4,16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href=""></a><span class="im">import</span> duckdb</span>
+<span id="cb14-2"><a href=""></a></span>
+<span id="cb14-3"><a href=""></a><span class="co"># Connect to DuckDB (in-memory db)</span></span>
+<span id="cb14-4"><a href=""></a>conn <span class="op">=</span> duckdb.<span class="ex">connect</span>()</span>
+<span id="cb14-5"><a href=""></a></span>
+<span id="cb14-6"><a href=""></a><span class="co"># Define SQL query</span></span>
+<span id="cb14-7"><a href=""></a>query <span class="op">=</span> <span class="st">"""</span></span>
+<span id="cb14-8"><a href=""></a><span class="st">    SELECT wt</span></span>
+<span id="cb14-9"><a href=""></a><span class="st">    FROM mtcars</span></span>
+<span id="cb14-10"><a href=""></a><span class="st">    WHERE mpg &gt; 20</span></span>
+<span id="cb14-11"><a href=""></a><span class="st">    ORDER BY wt DESC</span></span>
+<span id="cb14-12"><a href=""></a><span class="st">    LIMIT 5</span></span>
+<span id="cb14-13"><a href=""></a><span class="st">"""</span></span>
+<span id="cb14-14"><a href=""></a></span>
+<span id="cb14-15"><a href=""></a><span class="co"># Execute query and get results</span></span>
+<span id="cb14-16"><a href=""></a>result <span class="op">=</span> conn.execute(query).df()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div></div>
+<aside class="notes">
+<ul>
+<li>In each language, there’s a bit of setup in the front (to connect to the database) and some small syntactic differences at the end of the script…</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="package-choices-duckdb-3" class="slide level2" data-transition="none">
+<h2>Package Choices: DuckDB</h2>
+<div class="columns">
+<div class="column">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15" data-code-line-numbers="7-13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href=""></a><span class="fu">library</span>(duckdb)</span>
+<span id="cb15-2"><a href=""></a></span>
+<span id="cb15-3"><a href=""></a><span class="co"># Connect to DuckDB (in-memory db)</span></span>
+<span id="cb15-4"><a href=""></a>conn <span class="ot">&lt;-</span> <span class="fu">dbConnect</span>(duckdb<span class="sc">::</span><span class="fu">duckdb</span>())</span>
+<span id="cb15-5"><a href=""></a></span>
+<span id="cb15-6"><a href=""></a><span class="co"># Define SQL query</span></span>
+<span id="cb15-7"><a href=""></a>query <span class="ot">&lt;-</span> <span class="st">"</span></span>
+<span id="cb15-8"><a href=""></a><span class="st">    SELECT wt</span></span>
+<span id="cb15-9"><a href=""></a><span class="st">    FROM mtcars</span></span>
+<span id="cb15-10"><a href=""></a><span class="st">    WHERE mpg &gt; 20</span></span>
+<span id="cb15-11"><a href=""></a><span class="st">    ORDER BY wt DESC</span></span>
+<span id="cb15-12"><a href=""></a><span class="st">    LIMIT 5</span></span>
+<span id="cb15-13"><a href=""></a><span class="st">"</span></span>
+<span id="cb15-14"><a href=""></a></span>
+<span id="cb15-15"><a href=""></a><span class="co"># Execute query and get results</span></span>
+<span id="cb15-16"><a href=""></a>result <span class="ot">&lt;-</span> <span class="fu">dbGetQuery</span>(conn, query)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div><div class="column">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16" data-code-line-numbers="7-13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href=""></a><span class="im">import</span> duckdb</span>
+<span id="cb16-2"><a href=""></a></span>
+<span id="cb16-3"><a href=""></a><span class="co"># Connect to DuckDB (in-memory db)</span></span>
+<span id="cb16-4"><a href=""></a>conn <span class="op">=</span> duckdb.<span class="ex">connect</span>()</span>
+<span id="cb16-5"><a href=""></a></span>
+<span id="cb16-6"><a href=""></a><span class="co"># Define SQL query</span></span>
+<span id="cb16-7"><a href=""></a>query <span class="op">=</span> <span class="st">"""</span></span>
+<span id="cb16-8"><a href=""></a><span class="st">    SELECT wt</span></span>
+<span id="cb16-9"><a href=""></a><span class="st">    FROM mtcars</span></span>
+<span id="cb16-10"><a href=""></a><span class="st">    WHERE mpg &gt; 20</span></span>
+<span id="cb16-11"><a href=""></a><span class="st">    ORDER BY wt DESC</span></span>
+<span id="cb16-12"><a href=""></a><span class="st">    LIMIT 5</span></span>
+<span id="cb16-13"><a href=""></a><span class="st">"""</span></span>
+<span id="cb16-14"><a href=""></a></span>
+<span id="cb16-15"><a href=""></a><span class="co"># Execute query and get results</span></span>
+<span id="cb16-16"><a href=""></a>result <span class="op">=</span> conn.execute(query).df()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div></div>
+<aside class="notes">
+<ul>
+<li>But everything in the middle is the same! It’s 2025 and SQL will not die – in fact it’s as hot as ever!</li>
+<li>Using DuckDB is a great way to still have a <em>high-powered</em> analytics engine that’s easily portable across languages. If I had longer version of this data wrangling script in R that I needed to switch to Python for some reason, it would be extremely easy to do so – I would only have to slightly alter the code at the very beginning and the very end.</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="package-choices-ggplot2-plotnine" class="slide level2">
+<h2>Package Choices: ggplot2 &amp; plotnine</h2>
+<div class="columns">
+<div class="column">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href=""></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb17-2"><a href=""></a></span>
+<span id="cb17-3"><a href=""></a></span>
+<span id="cb17-4"><a href=""></a><span class="fu">ggplot</span>(</span>
+<span id="cb17-5"><a href=""></a>  mtcars,</span>
+<span id="cb17-6"><a href=""></a>  <span class="fu">aes</span>(<span class="at">x =</span> wt, <span class="at">y =</span> mpg)</span>
+<span id="cb17-7"><a href=""></a>) <span class="sc">+</span></span>
+<span id="cb17-8"><a href=""></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
+<span id="cb17-9"><a href=""></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>)</span>
+<span id="cb17-10"><a href=""></a><span class="co">#</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div><div class="column">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href=""></a><span class="im">from</span> plotnine <span class="im">import</span></span>
+<span id="cb18-2"><a href=""></a></span>
+<span id="cb18-3"><a href=""></a>(</span>
+<span id="cb18-4"><a href=""></a>  ggplot(</span>
+<span id="cb18-5"><a href=""></a>    mtcars,</span>
+<span id="cb18-6"><a href=""></a>    aes(x <span class="op">=</span> <span class="st">"wt"</span>, y <span class="op">=</span> <span class="st">"mpg"</span>)</span>
+<span id="cb18-7"><a href=""></a>  ) <span class="op">+</span></span>
+<span id="cb18-8"><a href=""></a>    geom_point(color <span class="op">=</span> <span class="st">"red"</span>) <span class="op">+</span></span>
+<span id="cb18-9"><a href=""></a>    geom_smooth(method <span class="op">=</span> <span class="st">"lm"</span>)</span>
+<span id="cb18-10"><a href=""></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div></div>
+<aside class="notes">
+<ul>
+<li>Let’s take a look at another example: {ggplot2} in R and {plotnine} in Python</li>
+<li>With the exception of quoting column names and wrapping the entire expression in parentheses in Python, the code is <em>literally</em> identical</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="package-choices-gt-great-tables" class="slide level2">
+<h2>Package Choices: gt &amp; great-tables</h2>
+<div class="columns">
+<div class="column">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href=""></a><span class="fu">library</span>(gt)</span>
+<span id="cb19-2"><a href=""></a></span>
+<span id="cb19-3"><a href=""></a>int_cols <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb19-4"><a href=""></a>  <span class="st">"cyl"</span>, <span class="st">"vs"</span>, <span class="st">"am"</span>,</span>
+<span id="cb19-5"><a href=""></a>  <span class="st">"gear"</span>, <span class="st">"carb"</span></span>
+<span id="cb19-6"><a href=""></a>)</span>
+<span id="cb19-7"><a href=""></a></span>
+<span id="cb19-8"><a href=""></a></span>
+<span id="cb19-9"><a href=""></a><span class="fu">gt</span>(mtcars) <span class="sc">|&gt;</span></span>
+<span id="cb19-10"><a href=""></a>  <span class="fu">tab_header</span>(</span>
+<span id="cb19-11"><a href=""></a>    <span class="at">title =</span> <span class="st">"Awesome mtcars"</span>,</span>
+<span id="cb19-12"><a href=""></a>    <span class="at">subtitle =</span> <span class="st">"With 💙 + GT"</span></span>
+<span id="cb19-13"><a href=""></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb19-14"><a href=""></a>  <span class="fu">fmt_number</span>() <span class="sc">|&gt;</span></span>
+<span id="cb19-15"><a href=""></a>  <span class="fu">fmt_integer</span>(<span class="at">columns =</span> int_cols)</span>
+<span id="cb19-16"><a href=""></a><span class="co">#</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div><div class="column">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb20"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href=""></a><span class="im">from</span> great_tables <span class="im">import</span> GT</span>
+<span id="cb20-2"><a href=""></a></span>
+<span id="cb20-3"><a href=""></a>int_cols <span class="op">=</span> [</span>
+<span id="cb20-4"><a href=""></a>  <span class="st">"cyl"</span>, <span class="st">"vs"</span>, <span class="st">"am"</span>,</span>
+<span id="cb20-5"><a href=""></a>  <span class="st">"gear"</span>, <span class="st">"carb"</span></span>
+<span id="cb20-6"><a href=""></a>]</span>
+<span id="cb20-7"><a href=""></a></span>
+<span id="cb20-8"><a href=""></a>(</span>
+<span id="cb20-9"><a href=""></a>  GT(mtcars)</span>
+<span id="cb20-10"><a href=""></a>  .tab_header(</span>
+<span id="cb20-11"><a href=""></a>      title <span class="op">=</span> <span class="st">"Awesome mtcars"</span>,</span>
+<span id="cb20-12"><a href=""></a>      subtitle <span class="op">=</span> <span class="st">"With 💙 + GT"</span></span>
+<span id="cb20-13"><a href=""></a>  .) <span class="op">|&gt;</span></span>
+<span id="cb20-14"><a href=""></a>  .fmt_number() <span class="op">|&gt;</span></span>
+<span id="cb20-15"><a href=""></a>  .fmt_integer(columns<span class="op">=</span>int_cols)</span>
+<span id="cb20-16"><a href=""></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div></div>
+<aside class="notes">
+<ul>
+<li>One last example, {gt} in R versus {great-tables} in Python</li>
+<li>These last two examples are no accident – Posit is behind all of these four packages: ggplot2, plotnine, gt, and great-tables; and they have put a lot of work into structuring these packages in a way that preserves a ton of syntax similarity</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="documentation" class="slide level2" data-transition="none">
+<h2>Documentation</h2>
+
+<img data-src="www/pillars-3.png" class="r-stretch"><aside class="notes">
+<ul>
+<li>In the final pillar of Documentation, empathy means providing clear guides and roadmaps for collaborators, including your future self</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="documentation-1" class="slide level2" data-transition="none">
+<h2>Documentation</h2>
+
+<img data-src="www/dont-forget.png" class="r-stretch"><aside class="notes">
+<ul>
+<li>Here’s my public service announcement: Please treat documentation as a first class citizen in your software development practices.</li>
+<li>Years ago I heard someone say that software shouldn’t be a bunch of code with a little bit of documentation – the ratio should actually be opposite – in an ideal world we should have a lot of documentation with a little bit of code.</li>
+<li>I’m going to talk about documentation in the contexts of (a) function documentation and (b) git-based documentation such as Issues and Pull Requests</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="documentation-function-documentation-syntax" class="slide level2" data-transition="none-out">
+<h2>Documentation: Function Documentation Syntax</h2>
+<div class="columns">
+<div class="column">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href=""></a>round_up <span class="ot">&lt;-</span> <span class="cf">function</span>(x, dig) {</span>
+<span id="cb21-2"><a href=""></a>    f <span class="ot">&lt;-</span> <span class="dv">10</span> <span class="sc">**</span> dig</span>
+<span id="cb21-3"><a href=""></a>    out <span class="ot">&lt;-</span> <span class="fu">ceiling</span>(x <span class="sc">*</span> f) <span class="sc">/</span> f</span>
+<span id="cb21-4"><a href=""></a>    <span class="fu">return</span>(out)</span>
+<span id="cb21-5"><a href=""></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div><div class="column">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href=""></a><span class="kw">def</span> round_up(x, dig):</span>
+<span id="cb22-2"><a href=""></a>    f <span class="op">=</span> <span class="dv">10</span> <span class="op">**</span> dig</span>
+<span id="cb22-3"><a href=""></a>    out <span class="op">=</span> np.ceil(x <span class="op">*</span> f) <span class="op">/</span> f</span>
+<span id="cb22-4"><a href=""></a>    <span class="cf">return</span> out</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div></div>
+<aside class="notes">
+<ul>
+<li>Consider this simple function that rounds a number to a certain number of digits and forces it to round up</li>
+<li>You don’t need to care about what it’s doing, and the syntax is very similar across both R and Python, but the point here is going to be around the <em>documentation</em> of the function.</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="documentation-function-documentation-syntax-1" class="slide level2" data-transition="none">
+<h2>Documentation: Function Documentation Syntax</h2>
+<div class="columns">
+<div class="column">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href=""></a><span class="co">#' Round a number *up* to a</span></span>
+<span id="cb23-2"><a href=""></a><span class="co">#' certain number of digits.</span></span>
+<span id="cb23-3"><a href=""></a><span class="co">#'</span></span>
+<span id="cb23-4"><a href=""></a><span class="co">#' @param x (double) The value</span></span>
+<span id="cb23-5"><a href=""></a><span class="co">#'   to be rounded.</span></span>
+<span id="cb23-6"><a href=""></a><span class="co">#' @param dig (int) The</span></span>
+<span id="cb23-7"><a href=""></a><span class="co">#'   number of digits to round</span></span>
+<span id="cb23-8"><a href=""></a><span class="co">#'   to.</span></span>
+<span id="cb23-9"><a href=""></a><span class="co">#'</span></span>
+<span id="cb23-10"><a href=""></a><span class="co">#' @return The rounded number.</span></span>
+<span id="cb23-11"><a href=""></a><span class="co">#'</span></span>
+<span id="cb23-12"><a href=""></a><span class="co">#' @examples</span></span>
+<span id="cb23-13"><a href=""></a><span class="co">#' # This returns `2.15`</span></span>
+<span id="cb23-14"><a href=""></a><span class="co">#' round_up(2.141, 2)</span></span>
+<span id="cb23-15"><a href=""></a>round_up <span class="ot">&lt;-</span> <span class="cf">function</span>(x, dig) {</span>
+<span id="cb23-16"><a href=""></a>    f <span class="ot">&lt;-</span> <span class="dv">10</span> <span class="sc">**</span> dig</span>
+<span id="cb23-17"><a href=""></a>    out <span class="ot">&lt;-</span> <span class="fu">ceiling</span>(x <span class="sc">*</span> f) <span class="sc">/</span> f</span>
+<span id="cb23-18"><a href=""></a>    <span class="fu">return</span>(out)</span>
+<span id="cb23-19"><a href=""></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div><div class="column">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb24"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href=""></a><span class="kw">def</span> round_up(x, dig):</span>
+<span id="cb24-2"><a href=""></a>    <span class="co">"""</span></span>
+<span id="cb24-3"><a href=""></a><span class="co">    Round a number *up* to a</span></span>
+<span id="cb24-4"><a href=""></a><span class="co">    certain number of digits.</span></span>
+<span id="cb24-5"><a href=""></a></span>
+<span id="cb24-6"><a href=""></a><span class="co">    Parameters</span></span>
+<span id="cb24-7"><a href=""></a><span class="co">    ----------</span></span>
+<span id="cb24-8"><a href=""></a><span class="co">    x : float</span></span>
+<span id="cb24-9"><a href=""></a><span class="co">        The value to be</span></span>
+<span id="cb24-10"><a href=""></a><span class="co">        rounded.</span></span>
+<span id="cb24-11"><a href=""></a><span class="co">    dig : int</span></span>
+<span id="cb24-12"><a href=""></a><span class="co">        The number of digits to</span></span>
+<span id="cb24-13"><a href=""></a><span class="co">        round to.</span></span>
+<span id="cb24-14"><a href=""></a></span>
+<span id="cb24-15"><a href=""></a><span class="co">    Returns</span></span>
+<span id="cb24-16"><a href=""></a><span class="co">    -------</span></span>
+<span id="cb24-17"><a href=""></a><span class="co">    float</span></span>
+<span id="cb24-18"><a href=""></a><span class="co">        The rounded number.</span></span>
+<span id="cb24-19"><a href=""></a></span>
+<span id="cb24-20"><a href=""></a><span class="co">    Examples</span></span>
+<span id="cb24-21"><a href=""></a><span class="co">    --------</span></span>
+<span id="cb24-22"><a href=""></a><span class="co">    &gt;&gt;&gt; round_up(2.141, 2)</span></span>
+<span id="cb24-23"><a href=""></a><span class="co">    2.15</span></span>
+<span id="cb24-24"><a href=""></a><span class="co">    """</span></span>
+<span id="cb24-25"><a href=""></a>    f <span class="op">=</span> <span class="dv">10</span> <span class="op">**</span> dig</span>
+<span id="cb24-26"><a href=""></a>    out <span class="op">=</span> np.ceil(x <span class="op">*</span> f) <span class="op">/</span> f</span>
+<span id="cb24-27"><a href=""></a>    <span class="cf">return</span> out</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div></div>
+<aside class="notes">
+<ul>
+<li>In R, we have Roxygen as the prevailing framework for function documentation</li>
+<li>In Python, we have a couple of options and a little bit more flexibility – the prevailing two options these days seem to be either Google or Scipy’s approach to docstrings
+<ul>
+<li>Within our team, we tend to go with the Scipy approach for no particular reason other than I think it’s slightly easier to read and Scipy itself is a little more data-science focused</li>
+</ul></li>
+<li>So let’s compare the Roxygen framework to the Python Scipy framework</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="documentation-function-documentation-syntax-2" class="slide level2" data-transition="none">
+<h2>Documentation: Function Documentation Syntax</h2>
+<div class="columns">
+<div class="column">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb25" data-code-line-numbers="1-2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href=""></a><span class="co">#' Round a number *up* to a</span></span>
+<span id="cb25-2"><a href=""></a><span class="co">#' certain number of digits.</span></span>
+<span id="cb25-3"><a href=""></a><span class="co">#'</span></span>
+<span id="cb25-4"><a href=""></a><span class="co">#' @param x (double) The value</span></span>
+<span id="cb25-5"><a href=""></a><span class="co">#'   to be rounded.</span></span>
+<span id="cb25-6"><a href=""></a><span class="co">#' @param dig (int) The</span></span>
+<span id="cb25-7"><a href=""></a><span class="co">#'   number of digits to round</span></span>
+<span id="cb25-8"><a href=""></a><span class="co">#'   to.</span></span>
+<span id="cb25-9"><a href=""></a><span class="co">#'</span></span>
+<span id="cb25-10"><a href=""></a><span class="co">#' @return The rounded number.</span></span>
+<span id="cb25-11"><a href=""></a><span class="co">#'</span></span>
+<span id="cb25-12"><a href=""></a><span class="co">#' @examples</span></span>
+<span id="cb25-13"><a href=""></a><span class="co">#' # This returns `2.15`</span></span>
+<span id="cb25-14"><a href=""></a><span class="co">#' round_up(2.141, 2)</span></span>
+<span id="cb25-15"><a href=""></a>round_up <span class="ot">&lt;-</span> <span class="cf">function</span>(x, dig) {</span>
+<span id="cb25-16"><a href=""></a>    f <span class="ot">&lt;-</span> <span class="dv">10</span> <span class="sc">**</span> dig</span>
+<span id="cb25-17"><a href=""></a>    out <span class="ot">&lt;-</span> <span class="fu">ceiling</span>(x <span class="sc">*</span> f) <span class="sc">/</span> f</span>
+<span id="cb25-18"><a href=""></a>    <span class="fu">return</span>(out)</span>
+<span id="cb25-19"><a href=""></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div><div class="column">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb26" data-code-line-numbers="3-4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href=""></a><span class="kw">def</span> round_up(x, dig):</span>
+<span id="cb26-2"><a href=""></a>    <span class="co">"""</span></span>
+<span id="cb26-3"><a href=""></a><span class="co">    Round a number *up* to a</span></span>
+<span id="cb26-4"><a href=""></a><span class="co">    certain number of digits.</span></span>
+<span id="cb26-5"><a href=""></a></span>
+<span id="cb26-6"><a href=""></a><span class="co">    Parameters</span></span>
+<span id="cb26-7"><a href=""></a><span class="co">    ----------</span></span>
+<span id="cb26-8"><a href=""></a><span class="co">    x : float</span></span>
+<span id="cb26-9"><a href=""></a><span class="co">        The value to be</span></span>
+<span id="cb26-10"><a href=""></a><span class="co">        rounded.</span></span>
+<span id="cb26-11"><a href=""></a><span class="co">    dig : int</span></span>
+<span id="cb26-12"><a href=""></a><span class="co">        The number of digits to</span></span>
+<span id="cb26-13"><a href=""></a><span class="co">        round to.</span></span>
+<span id="cb26-14"><a href=""></a></span>
+<span id="cb26-15"><a href=""></a><span class="co">    Returns</span></span>
+<span id="cb26-16"><a href=""></a><span class="co">    -------</span></span>
+<span id="cb26-17"><a href=""></a><span class="co">    float</span></span>
+<span id="cb26-18"><a href=""></a><span class="co">        The rounded number.</span></span>
+<span id="cb26-19"><a href=""></a></span>
+<span id="cb26-20"><a href=""></a><span class="co">    Examples</span></span>
+<span id="cb26-21"><a href=""></a><span class="co">    --------</span></span>
+<span id="cb26-22"><a href=""></a><span class="co">    &gt;&gt;&gt; round_up(2.141, 2)</span></span>
+<span id="cb26-23"><a href=""></a><span class="co">    2.15</span></span>
+<span id="cb26-24"><a href=""></a><span class="co">    """</span></span>
+<span id="cb26-25"><a href=""></a>    f <span class="op">=</span> <span class="dv">10</span> <span class="op">**</span> dig</span>
+<span id="cb26-26"><a href=""></a>    out <span class="op">=</span> np.ceil(x <span class="op">*</span> f) <span class="op">/</span> f</span>
+<span id="cb26-27"><a href=""></a>    <span class="cf">return</span> out</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div></div>
+<aside class="notes">
+<ul>
+<li>In both cases, you can kind of just stick your high-level function description at the beginning of your documentation</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="documentation-function-documentation-syntax-3" class="slide level2" data-transition="none">
+<h2>Documentation: Function Documentation Syntax</h2>
+<div class="columns">
+<div class="column">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb27" data-code-line-numbers="4-8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href=""></a><span class="co">#' Round a number *up* to a</span></span>
+<span id="cb27-2"><a href=""></a><span class="co">#' certain number of digits.</span></span>
+<span id="cb27-3"><a href=""></a><span class="co">#'</span></span>
+<span id="cb27-4"><a href=""></a><span class="co">#' @param x (double) The value</span></span>
+<span id="cb27-5"><a href=""></a><span class="co">#'   to be rounded.</span></span>
+<span id="cb27-6"><a href=""></a><span class="co">#' @param dig (int) The</span></span>
+<span id="cb27-7"><a href=""></a><span class="co">#'   number of digits to round</span></span>
+<span id="cb27-8"><a href=""></a><span class="co">#'   to.</span></span>
+<span id="cb27-9"><a href=""></a><span class="co">#'</span></span>
+<span id="cb27-10"><a href=""></a><span class="co">#' @return The rounded number.</span></span>
+<span id="cb27-11"><a href=""></a><span class="co">#'</span></span>
+<span id="cb27-12"><a href=""></a><span class="co">#' @examples</span></span>
+<span id="cb27-13"><a href=""></a><span class="co">#' # This returns `2.15`</span></span>
+<span id="cb27-14"><a href=""></a><span class="co">#' round_up(2.141, 2)</span></span>
+<span id="cb27-15"><a href=""></a>round_up <span class="ot">&lt;-</span> <span class="cf">function</span>(x, dig) {</span>
+<span id="cb27-16"><a href=""></a>    f <span class="ot">&lt;-</span> <span class="dv">10</span> <span class="sc">**</span> dig</span>
+<span id="cb27-17"><a href=""></a>    out <span class="ot">&lt;-</span> <span class="fu">ceiling</span>(x <span class="sc">*</span> f) <span class="sc">/</span> f</span>
+<span id="cb27-18"><a href=""></a>    <span class="fu">return</span>(out)</span>
+<span id="cb27-19"><a href=""></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div><div class="column">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb28" data-code-line-numbers="6-13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href=""></a><span class="kw">def</span> round_up(x, dig):</span>
+<span id="cb28-2"><a href=""></a>    <span class="co">"""</span></span>
+<span id="cb28-3"><a href=""></a><span class="co">    Round a number *up* to a</span></span>
+<span id="cb28-4"><a href=""></a><span class="co">    certain number of digits.</span></span>
+<span id="cb28-5"><a href=""></a></span>
+<span id="cb28-6"><a href=""></a><span class="co">    Parameters</span></span>
+<span id="cb28-7"><a href=""></a><span class="co">    ----------</span></span>
+<span id="cb28-8"><a href=""></a><span class="co">    x : float</span></span>
+<span id="cb28-9"><a href=""></a><span class="co">        The value to be</span></span>
+<span id="cb28-10"><a href=""></a><span class="co">        rounded.</span></span>
+<span id="cb28-11"><a href=""></a><span class="co">    dig : int</span></span>
+<span id="cb28-12"><a href=""></a><span class="co">        The number of digits to</span></span>
+<span id="cb28-13"><a href=""></a><span class="co">        round to.</span></span>
+<span id="cb28-14"><a href=""></a></span>
+<span id="cb28-15"><a href=""></a><span class="co">    Returns</span></span>
+<span id="cb28-16"><a href=""></a><span class="co">    -------</span></span>
+<span id="cb28-17"><a href=""></a><span class="co">    float</span></span>
+<span id="cb28-18"><a href=""></a><span class="co">        The rounded number.</span></span>
+<span id="cb28-19"><a href=""></a></span>
+<span id="cb28-20"><a href=""></a><span class="co">    Examples</span></span>
+<span id="cb28-21"><a href=""></a><span class="co">    --------</span></span>
+<span id="cb28-22"><a href=""></a><span class="co">    &gt;&gt;&gt; round_up(2.141, 2)</span></span>
+<span id="cb28-23"><a href=""></a><span class="co">    2.15</span></span>
+<span id="cb28-24"><a href=""></a><span class="co">    """</span></span>
+<span id="cb28-25"><a href=""></a>    f <span class="op">=</span> <span class="dv">10</span> <span class="op">**</span> dig</span>
+<span id="cb28-26"><a href=""></a>    out <span class="op">=</span> np.ceil(x <span class="op">*</span> f) <span class="op">/</span> f</span>
+<span id="cb28-27"><a href=""></a>    <span class="cf">return</span> out</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div></div>
+<aside class="notes">
+<ul>
+<li>Function arguments are defined in “param” tags in R and under a “Parameter” section in Python</li>
+<li>Python tends to traditionally be more explicit about supplying argument <em>types</em> next to the parameter, and while not required by Roxygen, we’ve tried to adopt that in R as well</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="documentation-function-documentation-syntax-4" class="slide level2" data-transition="none">
+<h2>Documentation: Function Documentation Syntax</h2>
+<div class="columns">
+<div class="column">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb29" data-code-line-numbers="10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href=""></a><span class="co">#' Round a number *up* to a</span></span>
+<span id="cb29-2"><a href=""></a><span class="co">#' certain number of digits.</span></span>
+<span id="cb29-3"><a href=""></a><span class="co">#'</span></span>
+<span id="cb29-4"><a href=""></a><span class="co">#' @param x (double) The value</span></span>
+<span id="cb29-5"><a href=""></a><span class="co">#'   to be rounded.</span></span>
+<span id="cb29-6"><a href=""></a><span class="co">#' @param dig (int) The</span></span>
+<span id="cb29-7"><a href=""></a><span class="co">#'   number of digits to round</span></span>
+<span id="cb29-8"><a href=""></a><span class="co">#'   to.</span></span>
+<span id="cb29-9"><a href=""></a><span class="co">#'</span></span>
+<span id="cb29-10"><a href=""></a><span class="co">#' @return The rounded number.</span></span>
+<span id="cb29-11"><a href=""></a><span class="co">#'</span></span>
+<span id="cb29-12"><a href=""></a><span class="co">#' @examples</span></span>
+<span id="cb29-13"><a href=""></a><span class="co">#' # This returns `2.15`</span></span>
+<span id="cb29-14"><a href=""></a><span class="co">#' round_up(2.141, 2)</span></span>
+<span id="cb29-15"><a href=""></a>round_up <span class="ot">&lt;-</span> <span class="cf">function</span>(x, dig) {</span>
+<span id="cb29-16"><a href=""></a>    f <span class="ot">&lt;-</span> <span class="dv">10</span> <span class="sc">**</span> dig</span>
+<span id="cb29-17"><a href=""></a>    out <span class="ot">&lt;-</span> <span class="fu">ceiling</span>(x <span class="sc">*</span> f) <span class="sc">/</span> f</span>
+<span id="cb29-18"><a href=""></a>    <span class="fu">return</span>(out)</span>
+<span id="cb29-19"><a href=""></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div><div class="column">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb30" data-code-line-numbers="15-18"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href=""></a><span class="kw">def</span> round_up(x, dig):</span>
+<span id="cb30-2"><a href=""></a>    <span class="co">"""</span></span>
+<span id="cb30-3"><a href=""></a><span class="co">    Round a number *up* to a</span></span>
+<span id="cb30-4"><a href=""></a><span class="co">    certain number of digits.</span></span>
+<span id="cb30-5"><a href=""></a></span>
+<span id="cb30-6"><a href=""></a><span class="co">    Parameters</span></span>
+<span id="cb30-7"><a href=""></a><span class="co">    ----------</span></span>
+<span id="cb30-8"><a href=""></a><span class="co">    x : float</span></span>
+<span id="cb30-9"><a href=""></a><span class="co">        The value to be</span></span>
+<span id="cb30-10"><a href=""></a><span class="co">        rounded.</span></span>
+<span id="cb30-11"><a href=""></a><span class="co">    dig : int</span></span>
+<span id="cb30-12"><a href=""></a><span class="co">        The number of digits to</span></span>
+<span id="cb30-13"><a href=""></a><span class="co">        round to.</span></span>
+<span id="cb30-14"><a href=""></a></span>
+<span id="cb30-15"><a href=""></a><span class="co">    Returns</span></span>
+<span id="cb30-16"><a href=""></a><span class="co">    -------</span></span>
+<span id="cb30-17"><a href=""></a><span class="co">    float</span></span>
+<span id="cb30-18"><a href=""></a><span class="co">        The rounded number.</span></span>
+<span id="cb30-19"><a href=""></a></span>
+<span id="cb30-20"><a href=""></a><span class="co">    Examples</span></span>
+<span id="cb30-21"><a href=""></a><span class="co">    --------</span></span>
+<span id="cb30-22"><a href=""></a><span class="co">    &gt;&gt;&gt; round_up(2.141, 2)</span></span>
+<span id="cb30-23"><a href=""></a><span class="co">    2.15</span></span>
+<span id="cb30-24"><a href=""></a><span class="co">    """</span></span>
+<span id="cb30-25"><a href=""></a>    f <span class="op">=</span> <span class="dv">10</span> <span class="op">**</span> dig</span>
+<span id="cb30-26"><a href=""></a>    out <span class="op">=</span> np.ceil(x <span class="op">*</span> f) <span class="op">/</span> f</span>
+<span id="cb30-27"><a href=""></a>    <span class="cf">return</span> out</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div></div>
+<aside class="notes">
+<ul>
+<li>The output of the function is documented in a “Returns” tag or section in both languages</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="documentation-function-documentation-syntax-5" class="slide level2" data-transition="none">
+<h2>Documentation: Function Documentation Syntax</h2>
+<div class="columns">
+<div class="column">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb31" data-code-line-numbers="12-14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href=""></a><span class="co">#' Round a number *up* to a</span></span>
+<span id="cb31-2"><a href=""></a><span class="co">#' certain number of digits.</span></span>
+<span id="cb31-3"><a href=""></a><span class="co">#'</span></span>
+<span id="cb31-4"><a href=""></a><span class="co">#' @param x (double) The value</span></span>
+<span id="cb31-5"><a href=""></a><span class="co">#'   to be rounded.</span></span>
+<span id="cb31-6"><a href=""></a><span class="co">#' @param dig (int) The</span></span>
+<span id="cb31-7"><a href=""></a><span class="co">#'   number of digits to round</span></span>
+<span id="cb31-8"><a href=""></a><span class="co">#'   to.</span></span>
+<span id="cb31-9"><a href=""></a><span class="co">#'</span></span>
+<span id="cb31-10"><a href=""></a><span class="co">#' @return The rounded number.</span></span>
+<span id="cb31-11"><a href=""></a><span class="co">#'</span></span>
+<span id="cb31-12"><a href=""></a><span class="co">#' @examples</span></span>
+<span id="cb31-13"><a href=""></a><span class="co">#' # This returns `2.15`</span></span>
+<span id="cb31-14"><a href=""></a><span class="co">#' round_up(2.141, 2)</span></span>
+<span id="cb31-15"><a href=""></a>round_up <span class="ot">&lt;-</span> <span class="cf">function</span>(x, dig) {</span>
+<span id="cb31-16"><a href=""></a>    f <span class="ot">&lt;-</span> <span class="dv">10</span> <span class="sc">**</span> dig</span>
+<span id="cb31-17"><a href=""></a>    out <span class="ot">&lt;-</span> <span class="fu">ceiling</span>(x <span class="sc">*</span> f) <span class="sc">/</span> f</span>
+<span id="cb31-18"><a href=""></a>    <span class="fu">return</span>(out)</span>
+<span id="cb31-19"><a href=""></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div><div class="column">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb32" data-code-line-numbers="20-23"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href=""></a><span class="kw">def</span> round_up(x, dig):</span>
+<span id="cb32-2"><a href=""></a>    <span class="co">"""</span></span>
+<span id="cb32-3"><a href=""></a><span class="co">    Round a number *up* to a</span></span>
+<span id="cb32-4"><a href=""></a><span class="co">    certain number of digits.</span></span>
+<span id="cb32-5"><a href=""></a></span>
+<span id="cb32-6"><a href=""></a><span class="co">    Parameters</span></span>
+<span id="cb32-7"><a href=""></a><span class="co">    ----------</span></span>
+<span id="cb32-8"><a href=""></a><span class="co">    x : float</span></span>
+<span id="cb32-9"><a href=""></a><span class="co">        The value to be</span></span>
+<span id="cb32-10"><a href=""></a><span class="co">        rounded.</span></span>
+<span id="cb32-11"><a href=""></a><span class="co">    dig : int</span></span>
+<span id="cb32-12"><a href=""></a><span class="co">        The number of digits to</span></span>
+<span id="cb32-13"><a href=""></a><span class="co">        round to.</span></span>
+<span id="cb32-14"><a href=""></a></span>
+<span id="cb32-15"><a href=""></a><span class="co">    Returns</span></span>
+<span id="cb32-16"><a href=""></a><span class="co">    -------</span></span>
+<span id="cb32-17"><a href=""></a><span class="co">    float</span></span>
+<span id="cb32-18"><a href=""></a><span class="co">        The rounded number.</span></span>
+<span id="cb32-19"><a href=""></a></span>
+<span id="cb32-20"><a href=""></a><span class="co">    Examples</span></span>
+<span id="cb32-21"><a href=""></a><span class="co">    --------</span></span>
+<span id="cb32-22"><a href=""></a><span class="co">    &gt;&gt;&gt; round_up(2.141, 2)</span></span>
+<span id="cb32-23"><a href=""></a><span class="co">    2.15</span></span>
+<span id="cb32-24"><a href=""></a><span class="co">    """</span></span>
+<span id="cb32-25"><a href=""></a>    f <span class="op">=</span> <span class="dv">10</span> <span class="op">**</span> dig</span>
+<span id="cb32-26"><a href=""></a>    out <span class="op">=</span> np.ceil(x <span class="op">*</span> f) <span class="op">/</span> f</span>
+<span id="cb32-27"><a href=""></a>    <span class="cf">return</span> out</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div></div>
+<aside class="notes">
+<ul>
+<li>And examples are always critical and similarly structured in both cases</li>
+<li>When we leverage these parallels in how we document our functions across the two languages, it’s yet another relatively simple way that we make it easier to cross the language aisle and work together</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="documentation-issues-prs" class="slide level2">
+<h2>Documentation: Issues &amp; PRs</h2>
+<p><br></p>
+
+<img data-src="www/git-sdlc.png" class="r-stretch"><aside class="notes">
+<ul>
+<li>Jumping now to our approach to what I’ll call GitHub &lt; air quotes &gt; “documentation” via issues and pull requests</li>
+<li>If you’re on a data science team, there are probably a few different approaches to how you could structure your collaborative workflows</li>
+<li>I’m going to show our current approach, which I believe is not only ours, but a similar workflow to what’s in place at other organizations we’ve seen, including Posit</li>
+<li>First, a user or developer identifies a bug in the software or comes up with an enhancement that they are suggesting implement, and they write this up in a detailed “issue”</li>
+<li>Once that issue has been created, when we’re ready to actually work on making the required code changes, we first create a new git <em>branch</em> in the repository specifically for the purpose of addressing that “issue”</li>
+<li>Then they go off and write or modify the code that fixes the bug or adds the enhancement</li>
+<li>And once the developer feels like the updated code is in a good spot, they can write up a Pull Request (or “PR”, for short) that details how they addressed the issue, what changed, and more</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="documentation-issues" class="slide level2 smaller">
+<h2>Documentation: Issues</h2>
+<p><br></p>
+<div class="callout callout-note no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Anatomy of a Good Issue</strong></p>
+</div>
+<div class="callout-content">
+<h3 id="overview">Overview</h3>
+<p><em>An overview of the issue or proposed enhancement, including rationale.</em></p>
+<p><br></p>
+<h3 id="reproducible-example">Reproducible Example</h3>
+<p><em>Some code that someone else can run to reproduce the issue or show the current shortfall that the proposed enhancement will overcome.</em></p>
+<p><br></p>
+<h3 id="potential-solutions">Potential Solution(s)</h3>
+<p><em>Discussion (possibly including code) regarding possible solution(s).</em></p>
+</div>
+</div>
+</div>
+<aside class="notes">
+<ul>
+<li>Let’s focus first on Issues</li>
+<li>A good issue is composed of 3 parts:
+<ul>
+<li>First, an overview of the bug you’re encountering or the enhancement you’re proposing, including the rationale for why we feel a change to the code is necessary</li>
+<li>Second, a reprex: a.k.a some code that someone else can run to reproduce the issue or show the current shortfall that the proposed enhancement will overcome</li>
+<li>Lastly, a discussion (which may or may not include code) regarding possible solution(s)</li>
+</ul></li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="documentation-issues-1" class="slide level2">
+<h2>Documentation: Issues</h2>
+<video id="video_shortcode_videojs_video1" class="video-js vjs-default-skin vjs-fluid" controls="" preload="auto" data-setup="{}" title=""><source src="www/good-issue.mp4"></video>
+<aside class="notes">
+<ul>
+<li>I thought I’d show an example “real-world” GitHub Issue we’ve authored that contains this structure: an overview, a reproducible example, and a possible solution that’s being provided</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="documentation-pull-requests" class="slide level2 smaller">
+<h2>Documentation: Pull Requests</h2>
+<p><br></p>
+<div class="callout callout-note no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Anatomy of a Good Pull Request</strong></p>
+</div>
+<div class="callout-content">
+<h3 id="overview-1">Overview</h3>
+<p><em>The purpose of the pull request and the associated Issue(s) it addresses.</em></p>
+<p><br></p>
+<h3 id="details">Details</h3>
+<p><em>The technical aspects of how the Issue was addressed in code, as well as any design decisions that were made along the way and/or hurdles that were overcome.</em></p>
+<p><br></p>
+<h3 id="how-to-test">How to Test</h3>
+<p><em>Provide instructions and code that the reviewer can run to see the impact of your changes.</em></p>
+</div>
+</div>
+</div>
+<aside class="notes">
+<ul>
+<li>On the Pull Requests side, it’s very similar</li>
+<li>A good pull request is also composed of 3 parts:
+<ul>
+<li>First, the purpose of the pull request and the associated Issue – or Issues – that it addresses</li>
+<li>Second, a more “in the weeds” section that details the technical aspects of how the Issue was addressed in code, as well as any design decisions that were made along the way, or any hurdles that were overcome</li>
+<li>Lastly, instructions and code that the reviewer can run to see the impact of your changes</li>
+</ul></li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="documentation-pull-requests-1" class="slide level2">
+<h2>Documentation: Pull Requests</h2>
+<video id="video_shortcode_videojs_video2" height="500" class="video-js vjs-default-skin " controls="" preload="auto" data-setup="{}" title=""><source src="www/good-pr.mp4"></video>
+<aside class="notes">
+<ul>
+<li>I’m going to pick on Ivan on our team for a minute here, because he does an awesome job at this
+<ul>
+<li>Here’s an example of a GitHub Pull Request he authored containing those three components I just mentioned &lt; start video &gt;: an overview, a “details” section, a “test” section, and even a “discussion” section that provides some additional context to the reviewer</li>
+</ul></li>
+<li>In the interest of time, I won’t show more examples beyond Issues and Pull Requests, but we also take a standardized approach to our READMEs in each repository as well, making sure to document – at a minimum – (a) the purpose of the repository and project background, (b) prerequisites or dependencies you’ll need to run the code, and (c) how to use the software.</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="final-thoughts" class="slide level2">
+<h2>Final Thoughts</h2>
+
+<img data-src="www/final-thoughts.png" class="r-stretch"><aside class="notes">
+<ul>
+<li>To put this all back together, it’s easy to say that successful team collaboration requires empathy, but these are the technical ways that we’ve “hacked” empathy within our team that keeps everyone happy and productive</li>
+<li>Lastly a couple quick shout outs – I’d be remiss not to mention Emily Reiderer, who previously gave a take called “Python Rgenomics”, which was a big inspiration for this talk and how we think about multilingual data science at Ketchbrook, and I’d recommend checking it out as a nice complement to this talk if you’re interested in exploring this topic further</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="get-in-touch-with-me" class="slide level2">
+<h2>Get In Touch With Me</h2>
+<p><br></p>
+<p><i class="fa-solid fa-link" aria-label="link"></i> <a href="https://www.ketchbrookanalytics.com" style="color: #e58c8c;">ketchbrook.com</a></p>
+<p><br></p>
+<p><i class="fa-brands fa-linkedin" aria-label="linkedin"></i> <a href="https://www.linkedin.com/in/michaeljthomas2" style="color: #e58c8c;">in/michaeljthomas2</a></p>
+<p><br></p>
+<p><i class="fa-brands fa-bluesky" aria-label="bluesky"></i> <a href="https://bsky.app/profile/mike-thomas.bsky.social" style="color: #e58c8c;"><span class="citation" data-cites="mike-thomas.bsky.social">@mike-thomas.bsky.social</span></a></p>
+<p><br></p>
+<p><i class="fa-brands fa-github" aria-label="github"></i> <a href="https://github.com/mthomas-ketchbrook" style="color: #e58c8c;"><span class="citation" data-cites="mthomas-ketchbrook">@mthomas-ketchbrook</span></a></p>
+<aside class="notes">
+<ul>
+<li>If you’d like to get in touch with me, you can find me on LinkedIn, BlueSky, or GitHub, or through our company website</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<!-- ### Feedback
+
+- Can we pull out any stories?
+
+- "In a talk where we're discussing how to try and bridge the worlds of Python and R, we can't even agree on whether we should use the term 'Multilingual' or 'Polyglot'
+
+-->
+
+</section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<p><img src="www/ketchbrook_logo.png" class="slide-logo"></p>
+<div class="footer footer-default">
+
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="presentation_files/libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="presentation_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="presentation_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="presentation_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="presentation_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="presentation_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="presentation_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="presentation_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="presentation_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="presentation_files/libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: false,
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: true,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'slide',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1050,
+
+        height: 700,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    <script id="quarto-html-after-body" type="application/javascript">
+      window.document.addEventListener("DOMContentLoaded", function (event) {
+        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+        tabsets.forEach(function(tabset) {
+          const tabby = new Tabby('#' + tabset.id);
+        });
+        const isCodeAnnotation = (el) => {
+          for (const clz of el.classList) {
+            if (clz.startsWith('code-annotation-')) {                     
+              return true;
+            }
+          }
+          return false;
+        }
+        const onCopySuccess = function(e) {
+          // button target
+          const button = e.trigger;
+          // don't keep focus
+          button.blur();
+          // flash "checked"
+          button.classList.add('code-copy-button-checked');
+          var currentTitle = button.getAttribute("title");
+          button.setAttribute("title", "Copied!");
+          let tooltip;
+          if (window.bootstrap) {
+            button.setAttribute("data-bs-toggle", "tooltip");
+            button.setAttribute("data-bs-placement", "left");
+            button.setAttribute("data-bs-title", "Copied!");
+            tooltip = new bootstrap.Tooltip(button, 
+              { trigger: "manual", 
+                customClass: "code-copy-button-tooltip",
+                offset: [0, -8]});
+            tooltip.show();    
+          }
+          setTimeout(function() {
+            if (tooltip) {
+              tooltip.hide();
+              button.removeAttribute("data-bs-title");
+              button.removeAttribute("data-bs-toggle");
+              button.removeAttribute("data-bs-placement");
+            }
+            button.setAttribute("title", currentTitle);
+            button.classList.remove('code-copy-button-checked');
+          }, 1000);
+          // clear code selection
+          e.clearSelection();
+        }
+        const getTextToCopy = function(trigger) {
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+        }
+        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+          text: getTextToCopy
+        });
+        clipboard.on('success', onCopySuccess);
+        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+            text: getTextToCopy,
+            container: window.document.getElementById('quarto-embedded-source-code-modal')
+          });
+          clipboardModal.on('success', onCopySuccess);
+        }
+          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+          var mailtoRegex = new RegExp(/^mailto:/);
+            var filterRegex = new RegExp('/' + window.location.host + '/');
+          var isInternal = (href) => {
+              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+          }
+          // Inspect non-navigation links and adorn them if external
+         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+          for (var i=0; i<links.length; i++) {
+            const link = links[i];
+            if (!isInternal(link.href)) {
+              // undo the damage that might have been done by quarto-nav.js in the case of
+              // links that we want to consider external
+              if (link.dataset.originalHref !== undefined) {
+                link.href = link.dataset.originalHref;
+              }
+            }
+          }
+        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+          const config = {
+            allowHTML: true,
+            maxWidth: 500,
+            delay: 100,
+            arrow: false,
+            appendTo: function(el) {
+                return el.closest('section.slide') || el.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'light-border',
+            placement: 'bottom-start',
+          };
+          if (contentFn) {
+            config.content = contentFn;
+          }
+          if (onTriggerFn) {
+            config.onTrigger = onTriggerFn;
+          }
+          if (onUntriggerFn) {
+            config.onUntrigger = onUntriggerFn;
+          }
+            config['offset'] = [0,0];
+            config['maxWidth'] = 700;
+          window.tippy(el, config); 
+        }
+        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+        for (var i=0; i<noterefs.length; i++) {
+          const ref = noterefs[i];
+          tippyHover(ref, function() {
+            // use id or data attribute instead here
+            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+            try { href = new URL(href).hash; } catch {}
+            const id = href.replace(/^#\/?/, "");
+            const note = window.document.getElementById(id);
+            if (note) {
+              return note.innerHTML;
+            } else {
+              return "";
+            }
+          });
+        }
+        const findCites = (el) => {
+          const parentEl = el.parentElement;
+          if (parentEl) {
+            const cites = parentEl.dataset.cites;
+            if (cites) {
+              return {
+                el,
+                cites: cites.split(' ')
+              };
+            } else {
+              return findCites(el.parentElement)
+            }
+          } else {
+            return undefined;
+          }
+        };
+        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+        for (var i=0; i<bibliorefs.length; i++) {
+          const ref = bibliorefs[i];
+          const citeInfo = findCites(ref);
+          if (citeInfo) {
+            tippyHover(citeInfo.el, function() {
+              var popup = window.document.createElement('div');
+              citeInfo.cites.forEach(function(cite) {
+                var citeDiv = window.document.createElement('div');
+                citeDiv.classList.add('hanging-indent');
+                citeDiv.classList.add('csl-entry');
+                var biblioDiv = window.document.getElementById('ref-' + cite);
+                if (biblioDiv) {
+                  citeDiv.innerHTML = biblioDiv.innerHTML;
+                }
+                popup.appendChild(citeDiv);
+              });
+              return popup.innerHTML;
+            });
+          }
+        }
+      });
+      </script>
+    <script>videojs(video_shortcode_videojs_video1);</script>
+    <script>videojs(video_shortcode_videojs_video2);</script>
+    
+
+</body></html>
